@@ -12,7 +12,7 @@ import ProcedurePage from "./components/ProcedurePage";
 import RegisterPage from "./components/RegisterPage";
 import ContactUsPage from "./components/ContactUsPage";
 import Header from "./components/Header";
-
+import Footer from "./components/Footer";
 
 class App extends Component {
   render() {
@@ -30,6 +30,7 @@ class App extends Component {
         <Route path="/register" exact component={RegisterPage} />
         <Route path="/contact-us" exact component={ContactUsPage} />
       </Router> 
+      <Footer></Footer>
       </div>         
     );
   }
