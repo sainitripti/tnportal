@@ -14,9 +14,20 @@ import ContactUsPage from "./components/ContactUsPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+import { Provider } from 'react-redux';
+import store from './store';
+
+import { loadUser } from './actions/authActions';
+
 class App extends Component {
+
+  componentDidMount(){
+    store.dispatch(loadUser());
+  }
+
   render() {
     return (
+      <Provider store={store}>
       <div>
       <Header></Header>
       <Router>  
@@ -31,7 +42,8 @@ class App extends Component {
         <Route path="/contact-us" exact component={ContactUsPage} />
       </Router> 
       <Footer></Footer>
-      </div>         
+      </div>  
+      </Provider>       
     );
   }
 }
