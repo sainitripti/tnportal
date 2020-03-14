@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage";
@@ -13,6 +13,7 @@ import RegisterPage from "./components/RegisterPage";
 import ContactUsPage from "./components/ContactUsPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import CompanyRegisterPage from "./components/CompanyRegisterPage";
 
 import { Provider } from 'react-redux';
 import store from './store';
@@ -40,6 +41,7 @@ class App extends Component {
         <Route path="/procedure" exact component={ProcedurePage} />
         <Route path="/register" exact component={RegisterPage} />
         <Route path="/contact-us" exact component={ContactUsPage} />
+        <Route path="/company-register" exact component={CompanyRegisterPage} />
       </Router> 
       <Footer></Footer>
       </div>  
