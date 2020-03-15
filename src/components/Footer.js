@@ -8,7 +8,7 @@ class Footer extends Component {
             <footer>
                 <span>
                     Copyright &copy; 2019
-                </span> |
+                </span> | 
                 <span>
                     Created by Tripti Saini, Nipun Soni, Harshita and Priyanka
                 </span>

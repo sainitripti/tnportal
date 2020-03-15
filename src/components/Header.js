@@ -17,8 +17,11 @@ class Header extends Component {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/login">Login</Nav.Link>
-                <NavDropdown title="About Us" id="collasible-nav-dropdown">
+                <NavDropdown title="User" id="collasible-nav-dropdown-user">
+                    <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+                    <NavDropdown.Item href="/register">Register</NavDropdown.Item>
+                </NavDropdown>
+                <NavDropdown title="About Us" id="collasible-nav-dropdown-about-us">
                     <NavDropdown.Item href="/history">History</NavDropdown.Item>
                     <NavDropdown.Item href="/alumni">Alumni</NavDropdown.Item>
                     <NavDropdown.Item href="/faculty-research">Faculty &amp; Research</NavDropdown.Item>
@@ -26,9 +29,9 @@ class Header extends Component {
                 </NavDropdown>
                 </Nav>
                 <Nav>
-                <NavDropdown title="Company" id="collasible-nav-dropdown">
+                <NavDropdown title="Company" id="collasible-nav-dropdown-company">
                     <NavDropdown.Item href="/procedure">Procedure</NavDropdown.Item>
-                    <NavDropdown.Item href="/register">Register</NavDropdown.Item>
+                    <NavDropdown.Item href="/company-register">Register</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="/contact-us">Contact Us</Nav.Link>
                 </Nav>
