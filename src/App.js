@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage";
@@ -14,6 +14,8 @@ import ContactUsPage from "./components/ContactUsPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CompanyRegisterPage from "./components/CompanyRegisterPage";
+import PageNotFound from './components/PageNotFound';
+import DashboardPage from './components/DashboardPage';
 
 import { Provider } from 'react-redux';
 import store from './store';
@@ -31,8 +33,8 @@ class App extends Component {
       <Provider store={store}>
       <div>
       <Header></Header>
-      <Router>  
-        <Route path="/" exact component={HomePage} />       
+      <Router>
+      <Switch>    
         <Route path="/login" exact component={LoginPage} />
         <Route path="/history" exact component={HistoryPage} />
         <Route path="/alumni" exact component={AlumniPage} />
@@ -42,7 +44,11 @@ class App extends Component {
         <Route path="/register" exact component={RegisterPage} />
         <Route path="/contact-us" exact component={ContactUsPage} />
         <Route path="/company-register" exact component={CompanyRegisterPage} />
-      </Router> 
+        <Route path="/student-dashboard" exact component={DashboardPage} />
+        <Route path="/" exact component={HomePage} />
+        <Route path="/*" component={PageNotFound} />
+      </Switch>
+      </Router>  
       <Footer></Footer>
       </div>  
       </Provider>       

@@ -21,18 +21,20 @@ class LoginPage extends Component {
         modal: false,
         enrollmentNum: '',
         password: '',
-        msg: null
+        msg: null,
+        userRole: null
     };
 
     static propTypes = {
         isAuthenticated: PropTypes.bool,
+        user: PropTypes.object,
         error: PropTypes.object.isRequired,
         login: PropTypes.func.isRequired,
         clearErrors: PropTypes.func.isRequired
     };
 
     componentDidUpdate(prevProps){
-        const {error, isAuthenticated} = this.props;
+        const {error, isAuthenticated, user} = this.props;
         if(error !== prevProps.error){
             //Check for Register Error
             if(error.id === 'LOGIN_FAIL'){
@@ -49,6 +51,18 @@ class LoginPage extends Component {
                 this.toggle();
             }
         }
+
+        if(isAuthenticated && user && user !== prevProps.user){
+            if(user.role==='ADMIN'){
+                console.log("User is admin");
+                this.setState({userRole: "ADMIN"});
+            }
+            else{
+                console.log("User is student");
+                this.setState({userRole: "STUDENT"});
+            }
+        }
+        
     }
 
     toggle = () => {
@@ -122,6 +136,7 @@ class LoginPage extends Component {
 
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
+    user: state.auth.user,
     error: state.error
 });
 
