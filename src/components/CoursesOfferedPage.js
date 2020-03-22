@@ -1,55 +1,101 @@
 import React, { Component } from 'react';
+import { CardHeader } from 'reactstrap';
 
 class CoursesOfferedPage extends Component {
     render() {
         return (
-            <div>
-                <p>Welcome to CoursesOfferedPage Component!!</p>
-                {/* 
-                (Departments, courses offered)
-                    1. Computer Science and Engineering
+            <section>
+                <h3 className="custom-width custom-margin">Courses offered by different departments at IGDTUW</h3>
+                <div className="card mb-3 custom-width custom-margin">
+                    <CardHeader className="dark-mode">Computer Science and Engineering</CardHeader>
+                    <div className="card-body">
+                        <p>
+                            The Computer Science and Engineering Department is the most versatile department of college and 
+                            caters to the needs of other departments as well. The department aims at developing the fundamental 
+                            conceptual knowledge along with the total personality, which helps computer engineers to face the 
+                            challenges of rapidly changing software industry. Technical skills, teamwork and specialized knowledge 
+                            prepare these young engineers to adopt and continuously learn new technologies. 
+                            Regular updation and expansion of the labs is done as per the requirement of the industry.
+                        </p>
+                        <ul>
+                            <li>B. Tech (CSE)</li>
+                            <li>M.Tech(AI)</li>
+                        </ul>             
+                    </div>
+                </div> 
 
-                        The Computer Science and Engineering Department is the most versatile department of college and caters to the needs of other departments as well. The department aims at developing the fundamental conceptual knowledge along with the total personality, which helps computer engineers to face the challenges of rapidly changing software industry. Technical skills, teamwork and specialized knowledge prepare these young engineers to adopt and continuously learn new technologies. Regular updation and expansion of the labs is done as per the requirement of the industry.
+                <div className="card mb-3 custom-width custom-margin">
+                    <CardHeader className="dark-mode">Electronics and Communication Engineering</CardHeader>
+                    <div className="card-body">
+                        <p>
+                            The department aims to impart quality technical education to the students aspiring for a career in the field of 
+                            electronics and communications engineering. The department also caters to the needs of other engineering disciplines 
+                            where electronics is taught either as an essential or an elective subject. The department offers subjects like basic 
+                            electronics, EMT theory, communications, VLSI, microwave engg, digital signal processing, optical communications, 
+                            advanced microprocessor and other related subjects.
+                        </p>
+                        <ul>
+                            <li>B.Tech (ECE)</li>
+                            <li>M.Tech(VLSI Design)</li>
+                            <li>M.Tech(ECE)-Weekend Programme</li>
+                        </ul>             
+                    </div>
+                </div>   
 
-                        B. Tech (CSE)
-                        M.Tech(AI)
+                <div className="card mb-3 custom-width custom-margin">
+                    <CardHeader className="dark-mode">Information Technology</CardHeader>
+                    <div className="card-body">
+                        <p>
+                            Department of IT aims to prepare students to undertake careers involving innovation and problem solving 
+                            using IT, or to undertake advanced studies for research careers in IT. It aims to emerge as a centre of 
+                            excellence in leveraging information technology to stimulate the exchange and creation of knowledge for 
+                            intellectual, social, political, moral and material development of the society.   The teaching pedagogy 
+                            in the department aims to bridge the gap between principles and applications with the goal to apply 
+                            knowledge of computing sciences for solving real world problems.
+                        </p>
+                        <ul>
+                            <li>B.Tech (IT)</li>
+                            <li>Master of Computer Application(MCA)</li>
+                            <li>M.Tech(Information Security Management)</li>
+                            <li>M.Tech(Information and Communication Technology)- Part Time</li> 
+                        </ul>             
+                    </div>
+                </div>   
 
-                    2. Electronics and Communication Engineering
+                <div className="card mb-3 custom-width custom-margin">
+                    <CardHeader className="dark-mode">Mechanical and Automation Engineering</CardHeader>
+                    <div className="card-body">
+                        <p>
+                            Besides giving a through grounding in basic sciences and engineering subjects  the curriculum  in mechanical 
+                            and  automation engineering emphasises on deep understanding of applied mechanics, microprocessors, machine 
+                            design, heat transfer, refrigeration and air conditioning, machine tools, metrology, robotics and CAD(CAM) 
+                            etc.  The department has well-equipped laboratories in related fields and students are exposed to various 
+                            modern equipment in the area of mechanical and automation .
+                        </p>
+                        <ul>
+                            <li>B.Tech (MAE)</li>
+                            <li>M.Tech(Robotics and Automation)</li>     
+                        </ul>             
+                    </div>
+                </div>   
 
-                        The department aims to impart quality technical education to the students aspiring for a career in the field of electronics and communications engineering. The department also caters to the needs of other engineering disciplines where electronics is taught either as an essential or an elective subject. The department offers subjects like basic electronics, EMT theory, communications, VLSI, microwave engg, digital signal processing, optical communications, advanced microprocessor and other related subjects.
-
-                        B.Tech (ECE)
-                        M.Tech(VLSI Design)
-                        M.Tech(ECE)-Weekend Programme
-
-                    3. Information Technology
-
-                        Department of IT aims to prepare students to undertake careers involving innovation and problem solving using IT, or to undertake advanced studies for research careers in IT. It aims to emerge as a centre of excellence in leveraging information technology to stimulate the exchange and creation of knowledge for intellectual, social, political, moral and material development of the society.   The teaching pedagogy in the department aims to bridge the gap between principles and applications with the goal to apply knowledge of computing sciences for solving real world problems.
-
-                        B.Tech (IT)
-                        Master of Computer Application(MCA)
-                        M.Tech(Information Security Management)
-                        M.Tech(Information and Communication Technology)- Part Time
-
-                    4. Mechanical and Automation Engineering
-
-                        Besides giving a through grounding in basic sciences and engineering subjects  the curriculum  in mechanical and  automation engineering emphasises on deep understanding of applied mechanics, microprocessors, machine design, heat transfer, refrigeration and air conditioning, machine tools, metrology, robotics and CAD(CAM) etc.  The department has well-equipped laboratories in related fields and students are exposed to various modern equipment in the area of mechanical and automation .
-
-                        B.Tech (MAE)
-                        M.Tech(Robotics and Automation)
-                        
-                    5. Architecture and Planning
-
-                        The Department of Architecture and Planning started in 2015 as a step towards social equity and gender parity in technical professions, having a vision that architectural education should empower students to become protagonist of positive change by exploring, learning and practicing a sustainable form of architecture. The architectural education must, besides imparting knowledge, also endeavor to create opportunities for students to engage with real life issues, so that they can reflect on their role in creating a better world.
-
-                        B.Architecture
-
-
-
-                
-                
-                */}
-            </div>
+                <div className="card mb-3 custom-width custom-margin">
+                    <CardHeader className="dark-mode">Architecture and Planning</CardHeader>
+                    <div className="card-body">
+                        <p>
+                            The Department of Architecture and Planning started in 2015 as a step towards social equity and gender 
+                            parity in technical professions, having a vision that architectural education should empower students 
+                            to become protagonist of positive change by exploring, learning and practicing a sustainable form of 
+                            architecture. The architectural education must, besides imparting knowledge, also endeavor to create 
+                            opportunities for students to engage with real life issues, so that they can reflect on their role in 
+                            creating a better world.
+                        </p>
+                        <ul>
+                            <li>B.Architecture</li>    
+                        </ul>             
+                    </div>
+                </div>          
+            </section>
         )
     }
 }
