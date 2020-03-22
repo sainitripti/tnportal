@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Table, CardHeader } from 'reactstrap';
-import './css/StudentsPage.css';
+import './css/AchievementsPage.css';
 
 class StudentsPage extends Component {
     render() {

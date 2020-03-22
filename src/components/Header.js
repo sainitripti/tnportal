@@ -60,7 +60,7 @@ class Header extends Component {
                         <NavDropdown.Item href="/alumni">Alumni</NavDropdown.Item>
                         <NavDropdown.Item href="/faculty-research">Faculty &amp; Research</NavDropdown.Item>
                         <NavDropdown.Item href="/courses-offered">Courses Offered</NavDropdown.Item>
-                        <NavDropdown.Item href="/students">Students &amp; Achievements</NavDropdown.Item>
+                        <NavDropdown.Item href="/students-achievements-awards">Achievements &amp; Awards</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
                 <Nav>
