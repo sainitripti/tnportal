@@ -1,10 +1,32 @@
 import React, { Component } from 'react';
+import { Table, CardHeader } from 'reactstrap';
 
 class FacultyResearchPage extends Component {
     render() {
         return (
             <div>
-                <p>Welcome to FacultyResearchPage Component!!</p>
+                <div className="card mb-3 custom-width custom-margin">
+                    <CardHeader className="dark-mode">Awards</CardHeader>
+                    <div className="card-body">                              
+                        <Table responsive borderless>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>
+                                    Dr. Ranu Gadi has also been awarded with the ‘Thomas Kuhn Honour Pin’ as hope for sustainable region 
+                                    for her research paper presented at the Third Int. Symposium on Non-CO2Green house Gases.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2).</td>
+                                    <td>Dr. Shailini Arora has been awarded the ‘Young Scientist Award’ by the SERC division of DST.</td>
+                                </tr>
+                            </tbody>
+                        </Table>
+                    </div>
+                </div>
+                        
+
                 {/* 
                 
                 Awards
