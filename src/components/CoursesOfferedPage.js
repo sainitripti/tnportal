@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import { CardHeader } from 'reactstrap';
 
 class CoursesOfferedPage extends Component {
     render() {
         return (
             <section>
                 <h3 className="custom-width custom-margin">Courses offered by different departments at IGDTUW</h3>
-                <div className="card mb-3 custom-width custom-margin custom-padding">
-                    <h3 className="card-title custom-padding">Computer Science and Engineering</h3>
+                <div className="card mb-3 custom-width custom-margin">
+                    <CardHeader className="dark-mode">Computer Science and Engineering</CardHeader>
                     <div className="card-body">
                         <p>
                             The Computer Science and Engineering Department is the most versatile department of college and 
@@ -23,8 +24,8 @@ class CoursesOfferedPage extends Component {
                     </div>
                 </div> 
 
-                <div className="card mb-3 custom-width custom-margin custom-padding">
-                    <h3 className="card-title custom-padding">Electronics and Communication Engineering</h3>
+                <div className="card mb-3 custom-width custom-margin">
+                    <CardHeader className="dark-mode">Electronics and Communication Engineering</CardHeader>
                     <div className="card-body">
                         <p>
                             The department aims to impart quality technical education to the students aspiring for a career in the field of 
@@ -41,8 +42,8 @@ class CoursesOfferedPage extends Component {
                     </div>
                 </div>   
 
-                <div className="card mb-3 custom-width custom-margin custom-padding">
-                    <h3 className="card-title custom-padding">Information Technology</h3>
+                <div className="card mb-3 custom-width custom-margin">
+                    <CardHeader className="dark-mode">Information Technology</CardHeader>
                     <div className="card-body">
                         <p>
                             Department of IT aims to prepare students to undertake careers involving innovation and problem solving 
@@ -61,8 +62,8 @@ class CoursesOfferedPage extends Component {
                     </div>
                 </div>   
 
-                <div className="card mb-3 custom-width custom-margin custom-padding">
-                    <h3 className="card-title custom-padding">Mechanical and Automation Engineering</h3>
+                <div className="card mb-3 custom-width custom-margin">
+                    <CardHeader className="dark-mode">Mechanical and Automation Engineering</CardHeader>
                     <div className="card-body">
                         <p>
                             Besides giving a through grounding in basic sciences and engineering subjects  the curriculum  in mechanical 
@@ -78,8 +79,8 @@ class CoursesOfferedPage extends Component {
                     </div>
                 </div>   
 
-                <div className="card mb-3 custom-width custom-margin custom-padding">
-                    <h3 className="card-title custom-padding">Architecture and Planning</h3>
+                <div className="card mb-3 custom-width custom-margin">
+                    <CardHeader className="dark-mode">Architecture and Planning</CardHeader>
                     <div className="card-body">
                         <p>
                             The Department of Architecture and Planning started in 2015 as a step towards social equity and gender 

@@ -11,6 +11,7 @@ import CoursesOfferedPage from "./components/CoursesOfferedPage";
 import ProcedurePage from "./components/ProcedurePage";
 import RegisterPage from "./components/RegisterPage";
 import ContactUsPage from "./components/ContactUsPage";
+import StudentsPage from './components/StudentsPage';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CompanyRegisterPage from "./components/CompanyRegisterPage";
@@ -40,6 +41,7 @@ class App extends Component {
         <Route path="/alumni" exact component={AlumniPage} />
         <Route path="/faculty-research" exact component={FacultyResearchPage} />
         <Route path="/courses-offered" exact component={CoursesOfferedPage} />
+        <Route path="/students" exact component={StudentsPage} />
         <Route path="/procedure" exact component={ProcedurePage} />
         <Route path="/register" exact component={RegisterPage} />
         <Route path="/contact-us" exact component={ContactUsPage} />

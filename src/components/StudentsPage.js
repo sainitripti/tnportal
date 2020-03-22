@@ -1,117 +1,461 @@
 import React, { Component } from 'react';
+import { Table, CardHeader } from 'reactstrap';
+import './css/StudentsPage.css';
 
 class StudentsPage extends Component {
     render() {
         return (
             <div>
-                <p>Welcome to StudentsPage Component!!</p>
 
-                {
-                    /* Achievements Batch 2021
-                Women Techmakers Scholars Program
-                Name 			Branch
-                1)	Nikita Rana 		IT
-                2)	Sashrika Kaur   	CSE
+                <div className="card mb-3 custom-width custom-margin">
+                    <CardHeader className="dark-mode">Achievements Batch 2021</CardHeader>
+                    <div className="card-body">
 
-                Microsoft Codess'19
-                Name 					Branch
-                1)	Manmeet Kaur			IT
+                        <h5 className="card-title custom-width">Women Techmakers Scholars Program</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Nikita Rana</td>
+                                    <td>IT</td>
+                                </tr>
+                                <tr>
+                                    <td>2).</td>
+                                    <td>Sashrika Kaur</td>
+                                    <td>CSE</td>
+                                </tr>
+                            </tbody>
+                        </Table>
 
-                Facebook Award to engage driving communities
-                Name 					Branch
-                1)	Aarushi Singh		CSE
+                        <h5 className="card-title custom-width">Microsoft Codess'19</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Manmeet Kaur</td>
+                                    <td>IT</td>
+                                </tr>
+                            </tbody>
+                        </Table>
 
-                Linux Diversity Scholarship
-                Name 					Branch
-                1)	Shreya Prasad			CSE
-                
+                        <h5 className="card-title custom-width">Facebook Award to engage driving communities</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Aarushi Singh</td>
+                                    <td>CSE</td>
+                                </tr>
+                            </tbody>
+                        </Table>
 
-                Achievements Batch 2020
-            
-            Shell Eco Marathon					
-            Name                    Branch
-            Team Panthara           Mae
+                        <h5 className="card-title custom-width">Linux Diversity Scholarship</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Shreya Prasad</td>
+                                    <td>CSE</td>
+                                </tr>
+                            </tbody>
+                        </Table>
 
-            Women Techmakers Program
-            Name 					Branch
-            1)	Akshita Gupta 			CSE
-            2)	Garima Malhotra			CSE
-            3)	Ankita Gulati			CSE
-            4)	Ria Bhatia 				CSE
+                    </div>
+                </div>
 
-            Google Anita Borg Memorial Scholarship
-            Name 					Branch
-            1)	Garima Malhotra 		CSE
+                <div className="card mb-3 custom-width custom-margin">
+                    <CardHeader className="dark-mode">Achievements Batch 2020</CardHeader>
+                    <div className="card-body">
 
-            Facebook Award to engage driving communities
-            Name 		        	Branch
-            1)	Shubhangi Mishra 		CSE
+                        <h5 className="card-title custom-width">Shell Eco Marathon</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Team Panthara</td>
+                                    <td>MAE</td>
+                                </tr>
+                            </tbody>
+                        </Table>
 
-            Richard E Merwin Student Scholarship Award
-            Name 				    	Branch
-            1)	Harshita Kalsi			ECE
+                        <h5 className="card-title custom-width">Women Techmakers Program</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Akshita Gupta</td>
+                                    <td>CSE</td>	
+                                </tr>
+                                <tr>
+                                    <td>2).</td>
+                                    <td>Garima Malhotra</td>
+                                    <td>CSE</td>	
+                                </tr>
+                                <tr>
+                                    <td>3).</td>
+                                    <td>Ankita Gulati</td>
+                                    <td>CSE</td>	
+                                </tr>
+                                <tr>
+                                    <td>4).</td>
+                                    <td>Ria Bhatia</td>
+                                    <td>CSE</td>	
+                                </tr>
+                            </tbody>
+                        </Table>
 
-            Google Code Jam for Women: First Position
-            Name 			        		Branch
-            1)	Shriya Chhabra				CSE
+                        <h5 className="card-title custom-width">Google Anita Borg Memorial Scholarship</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Garima Malhotra</td>
+                                    <td>CSE</td>
+                                </tr>
+                            </tbody>
+                        </Table>
 
-            ISIE Electric Solar Vehicle Championship
-            Name 					Branch
-            1)	Aruja Sharma		MAE
+                        <h5 className="card-title custom-width">Facebook Award to engage driving communities</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Shubhangi Mishra</td>
+                                    <td>CSE</td>
+                                </tr>
+                            </tbody>
+                        </Table>
 
-            VLSI Design Contest :First Position
-            Name 							Branch
-            1)	Manibha Sharma				ECE
+                        <h5 className="card-title custom-width">Richard E Merwin Student Scholarship Award</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Harshita Kalsi</td>
+                                    <td>ECE</td>
+                                </tr>
+                            </tbody>
+                        </Table>
 
-            IEEE Blended Learning Program Scholarship
-            Name 						Branch
-            1)	Pearl Pullan					ECE
+                        <h5 className="card-title custom-width">Google Code Jam for Women: First Position</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Shriya Chhabra</td>
+                                    <td>CSE</td>
+                                </tr>
+                            </tbody>
+                        </Table>
 
-            Cloud Foundry Scholarship
-            Name 						Branch
-            1)	Deepika Katiyar			CSE
+                        <h5 className="card-title custom-width">ISIE Electric Solar Vehicle Championship</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Aruja Sharma</td>
+                                    <td>MAE</td>
+                                </tr>
+                            </tbody>
+                        </Table>
 
-            Linux Diversity Scholarship
-            Name 					Branch
-            1)	Ankita Bhardwaj			CSE
+                        <h5 className="card-title custom-width">VLSI Design Contest :First Position</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Manibha Sharma</td>
+                                    <td>ECE</td>
+                                </tr>
+                            </tbody>
+                        </Table>
 
-            Education Scholarship Scheme for Serving Army Personnel
-            Name 				Branch
-            1)	Nibha Kumari		ECE
+                        <h5 className="card-title custom-width">IEEE Blended Learning Program Scholarship</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Pearl Pullan</td>
+                                    <td>ECE</td>
+                                </tr>
+                            </tbody>
+                        </Table>
 
-            Refractr.js Scholarship Atlanta and Women Who Code
-            Name 						Branch
-            1)	Anshika Gupta 			CSE
+                        <h5 className="card-title custom-width">Cloud Foundry Scholarship</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Deepika Katiyar</td>
+                                    <td>CSE</td>
+                                </tr>
+                            </tbody>
+                        </Table>
 
-            Pratibha Scholarship Award- EATON	
-            Name 					Branch
-            1)	Garima Malhotra 		CSE
-            2)	Arushi Singh			MAE
+                        <h5 className="card-title custom-width">Linux Diversity Scholarship</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Ankita Bhardwaj</td>
+                                    <td>CSE</td>
+                                </tr>
+                            </tbody>
+                        </Table>
 
-            AWIM Regionals: First Prize
-            Name 					Branch
-            1)	Khyati Sharma			MAE
+                        <h5 className="card-title custom-width">Education Scholarship Scheme for Serving Army Personnel</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Nibha Kumari</td>
+                                    <td>ECE</td>
+                                </tr>
+                            </tbody>
+                        </Table>
 
+                        <h5 className="card-title custom-width">Refractr.js Scholarship Atlanta and Women Who Code</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Anshika Gupta</td>
+                                    <td>CSE</td>
+                                </tr>
+                            </tbody>
+                        </Table>
 
-            2019 Batch
-1)	Name				Branch
-Mahima Kaushik      	MAE
+                        <h5 className="card-title custom-width">Pratibha Scholarship Award- EATON</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Garima Malhotra</td>
+                                    <td>CSE</td>
+                                </tr>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Arushi Singh</td>
+                                    <td>MAE</td>
+                                </tr>
+                            </tbody>
+                        </Table>
 
-Admission to MS in Mechanical Engineering from University of Cincinnati, Ohio with 80% tuition fee waiver scholarship. 
-2)	Name				Branch
-Jaskeerat Kaur 	       	MAE 
-Awardee of Prime Minister scholarship and Runners up of Mahindra Auto Quotient for 2 consecutive years  
+                        <h5 className="card-title custom-width">AWIM Regionals: First Prize</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Khyati Sharma</td>
+                                    <td>MAE</td>
+                                </tr>
+                            </tbody>
+                        </Table>
+                    </div>
+                </div>
 
+                <div className="card mb-3 custom-width custom-margin">
+                    <CardHeader className="dark-mode">Achievements Batch 2019</CardHeader>
+                    <div className="card-body">
+                        <h5 className="card-title custom-width">
+                            Admission to MS in Mechanical Engineering from University of Cincinnati, Ohio with 80% tuition fee waiver scholarship. 
+                        </h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Mahima Kaushik</td>
+                                    <td>MAE</td>
+                                </tr>
+                            </tbody>
+                        </Table>
 
-2018 Batch
-1)	Name					Branch
- Avishi Goyal        			MCA
-1st prize in Cohorts organized by Cisco Thinqbator,
+                        <h5 className="card-title custom-width">
+                            Awardee of Prime Minister scholarship and Runners up of Mahindra Auto Quotient for 2 consecutive years 
+                        </h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Jaskeerat Kaur</td>
+                                    <td>MAE</td>
+                                </tr>
+                            </tbody>
+                        </Table>                 
 
+                    </div>
+                </div>
 
+                <div className="card mb-3 custom-width custom-margin">
+                    <CardHeader className="dark-mode">Achievements Batch 2018</CardHeader>
+                    <div className="card-body">
+                        <h5 className="card-title custom-width">1st prize in Cohorts organized by Cisco Thinqbator</h5>                              
+                        <Table className="custom-width custom-margin" dark responsive bordered>
+                            <thead>
+                                <tr>
+                                    <th>S.no.</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1).</td>
+                                    <td>Avishi Goyal</td>
+                                    <td>MCA</td>
+                                </tr>
+                            </tbody>
+                        </Table>               
 
-*/ 
-                }
+                    </div>
+                </div>
             </div>
         )
     }
