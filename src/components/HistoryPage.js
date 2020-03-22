@@ -1,74 +1,162 @@
 import React, { Component } from 'react';
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import './css/HistoryPage.css';
 
 class HistoryPage extends Component {
     render() {
         return (
             <div>
-                <p>Welcome to HistoryPage Component!!</p>
-                {/* 
-     source: https://igdtuw.ac.in/index.php?option=com_content&view=article&id=300&Itemid=539             
-                 
-1998      
-	
-
-The Indira Gandhi Institute of Technology (IGIT) was established by Directorate of Training and Technical Education, Govt of N.C.T of Delhi as the first engineering college for women
-
-1998
-	
-
-B.Tech degree in CSE is introduced
-
-1998
-	
-
-B.Tech degree in ECE is introduced
-
-1998
-	
-
-B.Tech degree in MAE is introduced
-
-2002
-	
-
-The college became the first constituent college of Guru Gobind Singh Indraprastha University
-
-2002-2007
-	
-
-Continued to receive Grant-in-aid from Govt. of Delhi
-
-2005
-	
-
-Ph.D (Engg&Tech),Through, USET, GGSIPU is introduced
-
-2007
-	
-
-M.Tech (ECE) part-time is introduced
-
-2010
-	
-
-B.Tech degree in IT is introduced
-
-2011
-	
-
-MCA is introduced
-
-2013
-	
-
-IGIT granted autonomous status as Indira Gandhi Delhi Technical University for Women(IGDTUW).
-
-M.Tech(ISM), M.Tech(MPC), M.Tech (R&A) and M.Tech(VLSID) launched.
-
-2014
-	 Ph.D Program in Engineering, Science and Technology is launched.
- 2015 	 B.Arch program is launched (approval of Council of Architecture granted)
-    2016 	 M.Tech ICT Weekend  introduced */}
+                <VerticalTimeline>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    contentStyle={{ background: 'rgba(212, 212, 212, 0.3)' }}
+                    contentArrowStyle={{ borderRight: '7px solid  rgba(212, 212, 212, 0.3)'  }}
+                    date="1998"
+                    iconStyle={{ background: 'rgb(33, 37, 41)', color: '#fff' }}
+                >
+                    <p>
+                    The Indira Gandhi Institute of Technology (IGIT) was established by Directorate of Training and Technical Education, 
+                    Govt of N.C.T of Delhi as the first engineering college for women
+                    </p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    contentStyle={{ background: 'rgba(212, 212, 212, 0.3)' }}
+                    contentArrowStyle={{ borderRight: '7px solid  rgba(212, 212, 212, 0.3)'  }}
+                    date="1998"
+                    iconStyle={{ background: 'rgb(33, 37, 41)', color: '#fff' }}
+                >
+                    <p>
+                    B.Tech degree in CSE is introduced
+                    </p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    contentStyle={{ background: 'rgba(212, 212, 212, 0.3)' }}
+                    contentArrowStyle={{ borderRight: '7px solid  rgba(212, 212, 212, 0.3)'  }}
+                    date="1998"
+                    iconStyle={{ background: 'rgb(33, 37, 41)', color: '#fff' }}
+                >
+                    <p>
+                    B.Tech degree in ECE is introduced
+                    </p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    contentStyle={{ background: 'rgba(212, 212, 212, 0.3)' }}
+                    contentArrowStyle={{ borderRight: '7px solid  rgba(212, 212, 212, 0.3)'  }}
+                    date="1998"
+                    iconStyle={{ background: 'rgb(33, 37, 41)', color: '#fff' }}
+                >
+                    <p>
+                    B.Tech degree in MAE is introduced
+                    </p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: 'rgba(212, 212, 212, 0.3)' }}
+                    contentArrowStyle={{ borderRight: '7px solid  rgba(212, 212, 212, 0.3)'  }}
+                    date="2002"
+                    iconStyle={{ background: 'rgb(33, 37, 41)', color: '#fff' }}
+                >
+                    <p>
+                    The college became the first constituent college of Guru Gobind Singh Indraprastha University
+                    </p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: 'rgba(212, 212, 212, 0.3)' }}
+                    contentArrowStyle={{ borderRight: '7px solid  rgba(212, 212, 212, 0.3)'  }}
+                    date="2002-2007"
+                    iconStyle={{ background: 'rgb(33, 37, 41)', color: '#fff' }}
+                >
+                    <p>
+                    Continued to receive Grant-in-aid from Govt. of Delhi
+                    </p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: 'rgba(212, 212, 212, 0.3)' }}
+                    contentArrowStyle={{ borderRight: '7px solid  rgba(212, 212, 212, 0.3)'  }}
+                    date="2005"
+                    iconStyle={{ background: 'rgb(33, 37, 41)', color: '#fff' }}
+                >
+                    <p>
+                    Ph.D (Engg&amp;Tech),Through, USET, GGSIPU is introduced
+                    </p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: 'rgba(212, 212, 212, 0.3)' }}
+                    contentArrowStyle={{ borderRight: '7px solid  rgba(212, 212, 212, 0.3)'  }}
+                    date="2007"
+                    iconStyle={{ background: 'rgb(33, 37, 41)', color: '#fff' }}
+                >
+                    <p>
+                    M.Tech (ECE) part-time is introduced
+                    </p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: 'rgba(212, 212, 212, 0.3)' }}
+                    contentArrowStyle={{ borderRight: '7px solid  rgba(212, 212, 212, 0.3)'  }}
+                    date="2010"
+                    iconStyle={{ background: 'rgb(33, 37, 41)', color: '#fff' }}
+                >
+                    <p>
+                    B.Tech degree in IT is introduced
+                    </p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: 'rgba(212, 212, 212, 0.3)' }}
+                    contentArrowStyle={{ borderRight: '7px solid  rgba(212, 212, 212, 0.3)'  }}
+                    date="2011"
+                    iconStyle={{ background: 'rgb(33, 37, 41)', color: '#fff' }}
+                >
+                    <p>
+                    MCA is introduced
+                    </p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: 'rgba(212, 212, 212, 0.3)' }}
+                    contentArrowStyle={{ borderRight: '7px solid  rgba(212, 212, 212, 0.3)'  }}
+                    date="2013"
+                    iconStyle={{ background: 'rgb(33, 37, 41)', color: '#fff' }}
+                >
+                    <p>IGIT granted autonomous status as Indira Gandhi Delhi Technical University for Women(IGDTUW).</p>
+                    <p>M.Tech(ISM), M.Tech(MPC), M.Tech (R&amp;A) and M.Tech(VLSID) launched.</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: 'rgba(212, 212, 212, 0.3)' }}
+                    contentArrowStyle={{ borderRight: '7px solid  rgba(212, 212, 212, 0.3)'  }}
+                    date="2014"
+                    iconStyle={{ background: 'rgb(33, 37, 41)', color: '#fff' }}
+                >
+                    <p>Ph.D Program in Engineering, Science and Technology is launched.</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: 'rgba(212, 212, 212, 0.3)' }}
+                    contentArrowStyle={{ borderRight: '7px solid  rgba(212, 212, 212, 0.3)'  }}
+                    date="2015"
+                    iconStyle={{ background: 'rgb(33, 37, 41)', color: '#fff' }}
+                >
+                    <p>IB.Arch program is launched (approval of Council of Architecture granted)</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: 'rgba(212, 212, 212, 0.3)' }}
+                    contentArrowStyle={{ borderRight: '7px solid  rgba(212, 212, 212, 0.3)'  }}
+                    date="2016"
+                    iconStyle={{ background: 'rgb(33, 37, 41)', color: '#fff' }}
+                >
+                    <p> M.Tech ICT Weekend  introduced </p>
+                </VerticalTimelineElement>
+                </VerticalTimeline>
             </div>
         )
     }

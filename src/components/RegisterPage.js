@@ -15,7 +15,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { register } from '../actions/authActions';
 import { clearErrors } from '../actions/errorActions';
-import Logout from './Logout';
 
 class RegisterPage extends Component {
     state = {
@@ -127,7 +126,6 @@ class RegisterPage extends Component {
                         </Form>
                     </ModalBody>
                 </Modal>
-                <Logout></Logout>
             </div>
         )
     }
