@@ -6,25 +6,112 @@ class StudentsPage extends Component {
             <div>
                 <p>Welcome to StudentsPage Component!!</p>
 
-                {/* Students Achievement (More to be added)
+                {
+                    /* Achievements Batch 2021
+                Women Techmakers Scholars Program
+                Name 			Branch
+                1)	Nikita Rana 		IT
+                2)	Sashrika Kaur   	CSE
 
-        Patents
+                Microsoft Codess'19
+                Name 					Branch
+                1)	Manmeet Kaur			IT
 
-       1. Recently two patents have also been filed by CSE Dept. in the following areas:- 
+                Facebook Award to engage driving communities
+                Name 					Branch
+                1)	Aarushi Singh		CSE
 
-        1.Soil Multi-Parameters Remote Monitoring and Alerting System
-        2.A system for Building & Customizing Software and Hardware Interfaces of Smart Phone.
+                Linux Diversity Scholarship
+                Name 					Branch
+                1)	Shreya Prasad			CSE
+                
 
-        Awards
+                Achievements Batch 2020
+            
+            Shell Eco Marathon					
+            Name                    Branch
+            Team Panthara           Mae
 
-        1. Harshita Kalsi, ECE, Batch of 2020 has received the Richard E. Merwin Student Scholarship for Spring 2019 comprising of $1000 cash grant and a Certificate of recommendation.
-        
-        2. Taniya Bhatia , M.Tech ISM awarded with the Best Paper Award , “Malware Detection in Android based on Dynamic Analysis”, International Conference on Cyber Security and Protection of Digital Services (Cyber Security 2017)London, on June 19-20, 2017, IEEE Xplore Digital Library.
+            Women Techmakers Program
+            Name 					Branch
+            1)	Akshita Gupta 			CSE
+            2)	Garima Malhotra			CSE
+            3)	Ankita Gulati			CSE
+            4)	Ria Bhatia 				CSE
 
-        3.TEAM PANTHERA WON BEST TEAM AWARD AND 100 USD PRIZE IN SAE SUPER MILEAGE HELD AT MARSHALL,MICHIGAN,USA 
+            Google Anita Borg Memorial Scholarship
+            Name 					Branch
+            1)	Garima Malhotra 		CSE
 
-        4. Second year B.Arch. students Jhanak Mathur, Shramana Ghosh, M. Anushree Nair and Shreyata Khurana had won the First Prize in the " ACT OF GREEN DESIGN" competition organised by Amity School of Architecture and Planning in the month of April 2017.The theme of the design competition was “ACT TO DESIGN”- Reusing Plastic Waste, in orderto raise awareness regarding reuse of waste plastics.from B.Arch. The team used waste plastic bottles and straws in order to create a special kind of window panel using “jaalis” as the main concept. It was taken up as an economic and social cause in villages of hot and humid climate where such window panels are effective. The concept finds an application on all types of buildings due to its ease of construction. It was a good description of the Product Design along with the detailed model.
-                 */}
+            Facebook Award to engage driving communities
+            Name 		        	Branch
+            1)	Shubhangi Mishra 		CSE
+
+            Richard E Merwin Student Scholarship Award
+            Name 				    	Branch
+            1)	Harshita Kalsi			ECE
+
+            Google Code Jam for Women: First Position
+            Name 			        		Branch
+            1)	Shriya Chhabra				CSE
+
+            ISIE Electric Solar Vehicle Championship
+            Name 					Branch
+            1)	Aruja Sharma		MAE
+
+            VLSI Design Contest :First Position
+            Name 							Branch
+            1)	Manibha Sharma				ECE
+
+            IEEE Blended Learning Program Scholarship
+            Name 						Branch
+            1)	Pearl Pullan					ECE
+
+            Cloud Foundry Scholarship
+            Name 						Branch
+            1)	Deepika Katiyar			CSE
+
+            Linux Diversity Scholarship
+            Name 					Branch
+            1)	Ankita Bhardwaj			CSE
+
+            Education Scholarship Scheme for Serving Army Personnel
+            Name 				Branch
+            1)	Nibha Kumari		ECE
+
+            Refractr.js Scholarship Atlanta and Women Who Code
+            Name 						Branch
+            1)	Anshika Gupta 			CSE
+
+            Pratibha Scholarship Award- EATON	
+            Name 					Branch
+            1)	Garima Malhotra 		CSE
+            2)	Arushi Singh			MAE
+
+            AWIM Regionals: First Prize
+            Name 					Branch
+            1)	Khyati Sharma			MAE
+
+
+            2019 Batch
+1)	Name				Branch
+Mahima Kaushik      	MAE
+
+Admission to MS in Mechanical Engineering from University of Cincinnati, Ohio with 80% tuition fee waiver scholarship. 
+2)	Name				Branch
+Jaskeerat Kaur 	       	MAE 
+Awardee of Prime Minister scholarship and Runners up of Mahindra Auto Quotient for 2 consecutive years  
+
+
+2018 Batch
+1)	Name					Branch
+ Avishi Goyal        			MCA
+1st prize in Cohorts organized by Cisco Thinqbator,
+
+
+
+*/ 
+                }
             </div>
         )
     }
