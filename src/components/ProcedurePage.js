@@ -7,7 +7,7 @@ class ProcedurePage extends Component {
         return (
             <div>
                 <h3 className="custom-width custom-margin">Procedure for getting an on-campus placement:</h3>
-                <VerticalTimeline>
+                <VerticalTimeline layout="1-column">
                 <VerticalTimelineElement
                     className="vertical-timeline-element--work"
                     contentStyle={{ background: 'rgba(212, 212, 212, 0.3)' }}
