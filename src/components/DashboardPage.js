@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getCompanies } from '../actions/companyActions';
+import { getJobs } from '../actions/jobActions';
 import CompanyCard from './CompanyCard';
 
 class DashboardPage extends Component {
 
     static propTypes = {
         isAuthenticated: PropTypes.bool.isRequired,
-        companies: PropTypes.array.isRequired,
-        getCompanies: PropTypes.func.isRequired
+        jobs: PropTypes.array.isRequired,
+        getJobs: PropTypes.func.isRequired
     };
     
-    componentWillMount() { 
-        console.log("dasboard component will mount");
-        this.props.getCompanies();     
+    componentDidMount() { 
+        this.props.getJobs();     
     }
 
     render() {
@@ -23,8 +22,8 @@ class DashboardPage extends Component {
                 <div className="container-fluid">
                 <div className="col">
                     <div className="col-xl-12">
-                {this.props.companies.map(function(company, index) {
-                    return <CompanyCard key={company.name} company= {company}/>;
+                {this.props.jobs.map(function(job, index) {
+                    return <CompanyCard key={job.drive} job = {job}/>;
                 })}
                 </div>
                 </div>
@@ -36,11 +35,11 @@ class DashboardPage extends Component {
 
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
-    companies: state.company.companies
+    jobs: state.job.jobs
 });
 
 export default connect(
     mapStateToProps,
-    { getCompanies }
+    { getJobs }
 )
 (DashboardPage);
