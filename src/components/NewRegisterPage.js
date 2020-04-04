@@ -71,12 +71,13 @@ class NewRegisterPage extends Component {
         return (
 
             <div className="custom-width custom-margin">
-                <div className="card">
+                <div className="card custom-margin register-card">
                 <div className="card-body">
                     <h5 className="card-title">User Registration</h5>
                     <div className="card-text">
                         { this.state.msg ? <Alert color="danger">{ this.state.msg }</Alert>           
                         : null }
+                        <br/>
                         <Form onSubmit={this.onSubmit}>
                             <FormGroup>                                                       
                                 <Label for="enrollmentNum">Username</Label>
@@ -88,6 +89,7 @@ class NewRegisterPage extends Component {
                                     onChange={this.onChange}
                                     required
                                 />
+                                <br/>
                                 <Label for="password">Password</Label>
                                 <Input
                                     type="password"
@@ -97,6 +99,7 @@ class NewRegisterPage extends Component {
                                     onChange={this.onChange}
                                     required
                                 />
+                                <br/>
                                 <Label for="role">Role</Label>
                                 <Input
                                     type="text"

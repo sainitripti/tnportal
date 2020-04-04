@@ -60,7 +60,7 @@ class NewLoginPage extends Component {
 
         return (
                 <div className="custom-width custom-margin">
-                        <div className="card">
+                        <div className="card login-card custom-margin">
                         <div className="card-body">
                             <h5 className="card-title">User Login</h5>
                             <div className="card-text">
@@ -68,6 +68,7 @@ class NewLoginPage extends Component {
                             <Alert color="danger">{ this.state.msg }</Alert>
                              
                              : null }
+                             <br/>
                             <Form onSubmit={this.onSubmit}>
                                 <FormGroup>                                                       
                                     <Label for="enrollmentNum">Username</Label>
