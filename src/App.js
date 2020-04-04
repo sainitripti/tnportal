@@ -17,6 +17,7 @@ import Footer from "./components/Footer";
 import CompanyRegisterPage from "./components/CompanyRegisterPage";
 import PageNotFound from './components/PageNotFound';
 import DashboardPage from './components/DashboardPage';
+import ResultPage from './components/ResultPage';
 
 import store from './store';
 
@@ -58,6 +59,7 @@ class App extends Component {
                   <Route path="/contact-us" exact component={ContactUsPage} />
                   <Route path="/company-register" exact component={CompanyRegisterPage} />
                   { isAuthenticated && user.role==="STUDENT" && <Route path="/student-dashboard" exact component={DashboardPage}/> }
+                  { isAuthenticated && user.role==="STUDENT" && <Route path="/student-result" exact component={ResultPage}/> }
                   <Route path="/" exact component={HomePage} />
                   <Route path="/*" component={PageNotFound} />
                 </Switch>
