@@ -17,6 +17,7 @@ import Footer from "./components/Footer";
 import CompanyRegisterPage from "./components/CompanyRegisterPage";
 import PageNotFound from './components/PageNotFound';
 import DashboardPage from './components/DashboardPage';
+import AdminDashboardPage from './components/AdminDashboardPage';
 import ResultPage from './components/ResultPage';
 import AdminResultPage from './components/AdminResultPage';
 
@@ -60,6 +61,7 @@ class App extends Component {
                   <Route path="/contact-us" exact component={ContactUsPage} />
                   <Route path="/company-register" exact component={CompanyRegisterPage} />
                   { isAuthenticated && user.role==="STUDENT" && <Route path="/student-dashboard" exact component={DashboardPage}/> }
+                  { isAuthenticated && user.role==="ADMIN" && <Route path="/admin-dashboard" exact component={AdminDashboardPage}/> }
                   { isAuthenticated && user.role==="STUDENT" && <Route path="/student-result" exact component={ResultPage}/> }
                   { isAuthenticated && user.role==="ADMIN" && <Route path="/admin-result" exact component={AdminResultPage}/> }
                   <Route path="/" exact component={HomePage} />
