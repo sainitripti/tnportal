@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { getResults } from '../actions/resultActions';
 import AdminResultCard from './AdminResultCard';
 
+import {Button} from 'reactstrap';
+
 class AdminResultPage extends Component {
 
     static propTypes = {
@@ -21,6 +23,11 @@ class AdminResultPage extends Component {
                 <div className="content">
                 <div className="container-fluid">
                 <div className="col">
+                    <div className="col-xl-12 custom-margin custom-width">
+                        <Button>
+                            Add new result
+                        </Button>
+                    </div>
                     <div className="col-xl-12">
                 {this.props.results.map(function(result, index) {
                     return <AdminResultCard key={result.companyName} result = {result}/>;

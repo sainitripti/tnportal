@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage";
+import NewLoginPage from "./components/NewLoginPage";
 import HistoryPage from "./components/HistoryPage";
 import AlumniPage from "./components/AlumniPage";
 import FacultyResearchPage from "./components/FacultyResearchPage";
@@ -49,7 +50,7 @@ class App extends Component {
                 <Header></Header>
                 <Router>
                 <Switch>    
-                  <Route path="/login" exact component={LoginPage} />
+                  <Route path="/login" exact component={NewLoginPage} />
                   <Route path="/history" exact component={HistoryPage} />
                   <Route path="/alumni" exact component={AlumniPage} />
                   <Route path="/faculty-research" exact component={FacultyResearchPage} />
