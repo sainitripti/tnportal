@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getJobs } from '../actions/jobActions';
-import CompanyCard from './CompanyCard';
+import { getResults } from '../actions/resultActions';
+import AdminResultCard from './AdminResultCard';
 
-class DashboardPage extends Component {
+class AdminResultPage extends Component {
 
     static propTypes = {
         isAuthenticated: PropTypes.bool.isRequired,
-        jobs: PropTypes.array.isRequired,
-        getJobs: PropTypes.func.isRequired
+        results: PropTypes.array.isRequired,
+        getResults: PropTypes.func.isRequired
     };
     
     componentDidMount() { 
-        this.props.getJobs();     
+        this.props.getResults();     
     }
 
     render() {
@@ -22,8 +22,8 @@ class DashboardPage extends Component {
                 <div className="container-fluid">
                 <div className="col">
                     <div className="col-xl-12">
-                {this.props.jobs.map(function(job, index) {
-                    return <CompanyCard key={job.drive} job = {job}/>;
+                {this.props.results.map(function(result, index) {
+                    return <AdminResultCard key={result.companyName} result = {result}/>;
                 })}
                 </div>
                 </div>
@@ -35,11 +35,11 @@ class DashboardPage extends Component {
 
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
-    jobs: state.job.jobs
+    results: state.result.results
 });
 
 export default connect(
     mapStateToProps,
-    { getJobs }
+    { getResults }
 )
-(DashboardPage);
+(AdminResultPage);

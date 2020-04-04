@@ -1,27 +1,26 @@
 import axios from 'axios';
 
 import {
-    COMPANY_UPDATING,
-    COMPANY_UPDATE_SUCCESS,
-    COMPANY_UPDATE_FAIL
+    RESULT_UPDATING,
+    RESULT_UPDATE_SUCCESS,
+    RESULT_UPDATE_FAIL
 } from './types';
 
 
-//Get all companies
-export const getCompanies = () => (dispatch, getState) => {
+//Get all results
+export const getResults = () => (dispatch, getState) => {
     
-    //Companies updating
-    dispatch({ type: COMPANY_UPDATING });
+    //Jobs updating
+    dispatch({ type: RESULT_UPDATING });
 
-    axios.get('http://localhost:5000/api/companies', tokenConfig(getState))
+    axios.get('http://localhost:5000/api/results', tokenConfig(getState))
         .then(res => dispatch({
-            type: COMPANY_UPDATE_SUCCESS,
+            type: RESULT_UPDATE_SUCCESS,
             payload: res.data
         }))
         .catch(err => {
-            //dispatch(returnErrors(err.response.data, err.response.status));
             dispatch({
-                type: COMPANY_UPDATE_FAIL
+                type: RESULT_UPDATE_FAIL
             });
         })
 }

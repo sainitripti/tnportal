@@ -1,40 +1,188 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { CardHeader, CardBody, Card, CardFooter, Table } from 'reactstrap';
+
+import 'font-awesome/css/font-awesome.min.css';
 
 class CompanyCard extends Component {
     render() {
+		let batches = "";
+		this.props.job.targetBatchYear.forEach(batch => {
+			batches = batches + " " + batch;
+		})
+
+		let courses = "";
+		this.props.job.targetCourses.forEach(course => {
+			courses = courses + " " + course;
+		})
+
         return (
-                
-                <div className="card">
-		                <div className="card-header card-header-info">
-		                	<h4 style={{margin:0}}>
-                                {this.props.company.name}
-		                	</h4>
-		                </div>
-                		<div className="card-body">
-		                	<h4 className="card-title">
-		                  		Visit Date: 20 Jan 2020
-		                  	</h4>
-		                	<p className="card-category">
-								<a className="text-info" data-toggle="collapse" href="#moreDetails" role="button" aria-expanded="false" aria-controls="moreDetails">
-							    	More details
-							  	</a>
-		  					</p>
-							<div className="collapse" id="moreDetails">
-						  		<div className="card card-body">
-						    		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-						  		</div>
-							</div>
-                  			<button type="button" className="btn btn-outline-success">Register</button>
-                		</div>
-                		<div className="card-footer">
-                  			<div className="stats">
-                    			<i className="material-icons">
-                    				access_time
-                    			</i> 
-                    			Last date to register: 5 Feb 2020
-                  			</div>
-                		</div>
-              		</div>
+			<Card className="mb-3 custom-width custom-margin">
+				<CardHeader className="dark-mode">{this.props.job.drive}</CardHeader>
+				<CardBody>
+				<Table striped borderless>
+					<tbody>
+						<tr>
+						<td>Visit Date</td>
+						<td>{this.props.job.visitDate}</td>
+						</tr>
+						<tr>
+						<td>Profile</td>
+						<td>{this.props.job.profile}</td>
+						</tr>
+						<tr>
+						<td>Domain</td>
+						<td>{this.props.job.domain}</td>
+						</tr>
+						<tr>
+						<td>Role</td>
+						<td>{this.props.job.role}</td>
+						</tr>
+						<tr>
+						<td>Location</td>
+						<td>{this.props.job.location}</td>
+						</tr>
+						<tr>
+						<td>Job Description</td>
+						<td>{this.props.job.description}</td>
+						</tr>
+						<tr>
+						<td>Target Batches</td>
+						<td>{batches}</td>
+						</tr>
+						<tr>
+						<td>Target Courses</td>
+						<td>{courses}</td>
+						</tr>
+						<tr>
+						<td>Other information</td>
+						<td>{this.props.job.otherInfoForStudents}</td>
+						</tr>
+							
+						<tr>
+							<th>Eligibility Criteria</th>
+							<th></th>
+						</tr>
+						{this.props.job.eligibilityCriteria.cutoffPercentage ? 
+							<tr>
+								<td>Cutoff percentage</td>
+								<td>{this.props.job.eligibilityCriteria.cutoffPercentage}</td>
+							</tr>
+							: null
+						}	
+						{this.props.job.eligibilityCriteria.activeBacklogs ? 
+							<tr>
+								<td>Active Backlogs</td>
+								<td>{this.props.job.eligibilityCriteria.activeBacklogs}</td>
+							</tr>
+							: null
+						}	
+						{this.props.job.eligibilityCriteria.deadBacklogs ? 
+							<tr>
+								<td>Dead Backlogs</td>
+								<td>{this.props.job.eligibilityCriteria.deadBacklogs}</td>
+							</tr>
+							: null
+						}	
+
+						<tr>
+							<th>Selection Procedure</th>
+							<th></th>
+						</tr>
+						{this.props.job.selectionProcedure.writtenTest ? 
+							<tr>
+								<td>Written Test</td>
+								<td>{this.props.job.selectionProcedure.writtenTest}</td>
+							</tr>
+							: null
+						}
+						{this.props.job.selectionProcedure.onlineTest ? 
+							<tr>
+								<td>Online Test</td>
+								<td>{this.props.job.selectionProcedure.onlineTest}</td>
+							</tr>
+							: null
+						}
+						{this.props.job.selectionProcedure.groupDiscussion ? 
+							<tr>
+								<td>Group Discussion</td>
+								<td>{this.props.job.selectionProcedure.groupDiscussion}</td>
+							</tr>
+							: null
+						}
+						{this.props.job.selectionProcedure.technicalRound ? 
+							<tr>
+								<td>Technical Round</td>
+								<td>{this.props.job.selectionProcedure.technicalRound}</td>
+							</tr>
+							: null
+						}
+						{this.props.job.selectionProcedure.hrRound ? 
+							<tr>
+								<td>HR Round</td>
+								<td>{this.props.job.selectionProcedure.hrRound}</td>
+							</tr>
+							: null
+						}
+						
+						<tr>
+							<th>Compensation Offered</th>
+							<th></th>
+						</tr>
+						{this.props.job.compensationOffered.stipend ? 
+							<tr>
+								<td>Stipend</td>
+								<td>{this.props.job.compensationOffered.stipend} per month</td>
+							</tr>
+							: null
+						}
+						
+						{this.props.job.compensationOffered.breakupCTC && this.props.job.compensationOffered.breakupCTC.fixed ? 
+							<tr>
+								<td>Fixed pay</td>
+								<td>{this.props.job.compensationOffered.breakupCTC.fixed} LPA</td>
+							</tr>
+							: null
+						}
+						{this.props.job.compensationOffered.breakupCTC && this.props.job.compensationOffered.breakupCTC.variable ? 
+							<tr>
+								<td>Variable pay</td>
+								<td>{this.props.job.compensationOffered.breakupCTC.variable} LPA</td>
+							</tr>
+							: null
+						}	
+						{this.props.job.compensationOffered.breakupCTC && this.props.job.compensationOffered.breakupCTC.bonds ? 
+							<tr>
+								<td>Bonds</td>
+								<td>{this.props.job.compensationOffered.breakupCTC.bonds} LPA</td>
+							</tr>
+							: null
+						}	
+						{this.props.job.compensationOffered.breakupCTC && this.props.job.compensationOffered.breakupCTC.otherAllowances ? 
+							<tr>
+								<td>Other allowances</td>
+								<td>{this.props.job.compensationOffered.breakupCTC.otherAllowances} LPA</td>
+							</tr>
+							: null
+						}
+						{this.props.job.compensationOffered.totalCTC ? 
+							<tr>
+								<th>Total CTC</th>
+								<th>{this.props.job.compensationOffered.totalCTC} LPA</th>
+							</tr>
+							: null
+						}		
+						</tbody>
+					</Table>
+				
+					<button type="button" className="btn btn-outline-success">Register</button>         
+				</CardBody>
+				<CardFooter>
+					<div>
+						<i className="fa fa-clock-o"></i> 
+						&nbsp; <strong>Last date to register:</strong> {this.props.job.lastDateToRegister}
+					</div>
+				</CardFooter>
+			</Card> 
         )
     }
 }
