@@ -3,14 +3,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 import HomePage from "./components/HomePage";
-import LoginPage from "./components/LoginPage";
 import NewLoginPage from "./components/NewLoginPage";
 import HistoryPage from "./components/HistoryPage";
 import AlumniPage from "./components/AlumniPage";
 import FacultyResearchPage from "./components/FacultyResearchPage";
 import CoursesOfferedPage from "./components/CoursesOfferedPage";
 import ProcedurePage from "./components/ProcedurePage";
-import RegisterPage from "./components/RegisterPage";
+import NewRegisterPage from "./components/NewRegisterPage";
 import ContactUsPage from "./components/ContactUsPage";
 import AchievementsPage from './components/AchievementsPage';
 import Header from "./components/Header";
@@ -57,7 +56,7 @@ class App extends Component {
                   <Route path="/courses-offered" exact component={CoursesOfferedPage} />
                   <Route path="/students-achievements-awards" exact component={AchievementsPage} />
                   <Route path="/procedure" exact component={ProcedurePage} />
-                  <Route path="/register" exact component={RegisterPage} />
+                  <Route path="/register" exact component={NewRegisterPage} />
                   <Route path="/contact-us" exact component={ContactUsPage} />
                   <Route path="/company-register" exact component={CompanyRegisterPage} />
                   { isAuthenticated && user.role==="STUDENT" && <Route path="/student-dashboard" exact component={DashboardPage}/> }
