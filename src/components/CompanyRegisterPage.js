@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import {InputGroup, InputGroupAddon, InputGroupText} from 'reactstrap';
+import {Row, Col} from 'reactstrap';
+
 import './css/CompanyRegisterPage.css';
 
 import {
@@ -14,11 +17,12 @@ class CompanyRegisterPage extends Component {
         return (
             <section>
             <div className="card-mb-3 custom-width custom-margin">
-            <h3 className="card-title">JAF Form</h3>
+            <h1 className="card-title">Job Announcement Form</h1>
             
             <div className="card-body">
                 <Form id="jaf">
                 <FormGroup>
+                    <p><h3>1. Company Details</h3></p>
                     <Label for="companyName">Company Name</Label>
                     <Input type="text" name="companyName" id="companyName" placeholder="Company Name" />
                 </FormGroup>
@@ -34,28 +38,59 @@ class CompanyRegisterPage extends Component {
                     <Label for="email">Email</Label>
                     <Input type="email" name="email" id="email" placeholder="x@company.com" />
                 </FormGroup>
+                <p><h3>2. Job Details</h3></p>
                 <FormGroup>
                     <Label for="jobTitle">Job Title</Label>
                     <Input type="text" name="jobTitle" id="jobTitle" placeholder="e.g. Software Engineer" />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="jobProfile">Profile</Label>
-                    <Input type="select" name="jobProfile" id="jobProfile" multiple>
-                    <option>Technical</option>
-                    <option>Non-Technical</option>
-                    </Input>
+                    <Label for="jobProfile">Domain</Label>
+                    <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                    <Input addon type="checkbox" aria-label="Checkbox for following text input" />
+                    </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Technical" />
+                    </InputGroup>
+                    <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                    <Input addon type="checkbox" aria-label="Checkbox for following text input" />
+                    </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Non-Technical" />
+                    </InputGroup>
                 </FormGroup>
                 <FormGroup>
-                    <Label for="offerType">Type of Offer</Label>
-                    <Input type="select" name="offerType" id="offerType" multiple>
-                    <option>Full Time Employee</option>
-                    <option>Intern</option>
-                    </Input>
+                    <Label for="offerType">Job Role</Label>
+                    <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                    <Input addon type="checkbox" aria-label="Checkbox for following text input" />
+                    </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Full Time Employee" />
+                    </InputGroup>
+                    <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                    <Input addon type="checkbox" aria-label="Checkbox for following text input" />
+                    </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Intern" />
+                    </InputGroup>
                 </FormGroup>
                 <FormGroup>
                     <Label for="jobLocation">Job Location</Label>
                     <Input type="text" name="jobLocation" id="jobLocation" placeholder="Location(s)" />
                 </FormGroup>
+                <FormGroup>
+                    <Label for="jdFile">Job Desciption</Label>
+                    <Input type="text" name="jdFile" id="jdFile" placeholder="Please enter a drive link."/>
+                </FormGroup>
+                <p><h3>3. Eligibility Criteria</h3></p>
+
                 <FormGroup>
                     <Label for="targetBatch">Target Batch</Label>
                     <Input type="text" name="targetBatch" id="targetBatch" placeholder="e.g. 2020,2021" />
@@ -63,56 +98,180 @@ class CompanyRegisterPage extends Component {
                 <FormGroup>
                     <Label for="targetBranch">Target Branch</Label>
                     <FormGroup>
-                        <Label for="bTechBranch">B.Tech.</Label>
-                        <Input type="select" name="bTechBranch" id="bTechBranch" multiple>
-                        <option>Computer Science Engineering</option>
-                        <option>Information Technology</option>
-                        <option>Electronics and Communication Engineering</option>
-                        <option>Mechanical Engineering</option>
-                        </Input>
+                        <Label for="bTechBranch"><em>B.Tech.</em></Label>    
+                    <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                    <Input addon type="checkbox" aria-label="Checkbox for following text input" />
+                    </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Computer Science Engineering" />
+                    </InputGroup>
+                    <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                    <Input addon type="checkbox" aria-label="Checkbox for following text input" />
+                    </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Information Technology" />
+                    </InputGroup>
+                    <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                    <Input addon type="checkbox" aria-label="Checkbox for following text input" />
+                    </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Electronics and Communication Engineering" />
+                    </InputGroup>
+                    <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                    <Input addon type="checkbox" aria-label="Checkbox for following text input" />
+                    </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Mechanical Engineering" />
+                    </InputGroup>
                     </FormGroup>
                     <FormGroup>
-                        <Label for="bArchBranch">B.Arch.</Label>
-                        <Input type="select" name="bArchBranch" id="bArchBranch" multiple>
-                        <option>Architecture and Planning</option>
-                        </Input>
+                        <Label for="bArchBranch"><em>B.Arch.</em></Label>
+                        <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                    <Input addon type="checkbox" aria-label="Checkbox for following text input" />
+                    </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Architecture and Planning" />
+                    </InputGroup>
                     </FormGroup>
                     <FormGroup>
-                        <Label for="mTechBranch">M.Tech.</Label>
-                        <Input type="select" name="mTechBranch" id="mTechBranch" multiple>
-                        <option>Mobile Pervasive Computing</option>
-                        <option>Information Security Management</option>
-                        <option>VLSI</option>
-                        <option>Robotics and Automation</option>
-                        </Input>
+                        <Label for="mTechBranch"><em>M.Tech.</em></Label>
+                        <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                    <Input addon type="checkbox" aria-label="Checkbox for following text input" />
+                    </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Artificial Intelligence" />
+                    </InputGroup>
+                    <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                    <Input addon type="checkbox" aria-label="Checkbox for following text input" />
+                    </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Information Security Management" />
+                    </InputGroup>
+                    <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                    <Input addon type="checkbox" aria-label="Checkbox for following text input" />
+                    </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="VLSI" />
+                    </InputGroup>
+                    <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                    <Input addon type="checkbox" aria-label="Checkbox for following text input" />
+                    </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Robotics and Automation" />
+                    </InputGroup>
                     </FormGroup>
                     <FormGroup>
-                        <Label for="mcaBranch">MCA</Label>
-                        <Input type="select" name="mcaBranch" id="mcaBranch" multiple>
-                        <option>Masters of Computer Administration</option>
-                        </Input>
+                        <Label for="mcaBranch"><em>MCA</em></Label>
+                        <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                    <Input addon type="checkbox" aria-label="Checkbox for following text input" />
+                    </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Masters of Computer Application" />
+                    </InputGroup>
                     </FormGroup>
                 </FormGroup>
+                <Row form>
+        <Col md={4}>
+        <FormGroup>
+                    <Label for="remarks">Cutoff %</Label>
+                    <Input type="plaintext" name="remarks" id="remarks" />
+                </FormGroup>
+        </Col>
+        <Col md={4}>
+        <FormGroup>
+                    <Label for="remarks">Active Backlogs</Label>
+                    <Input type="plaintext" name="remarks" id="remarks" />
+                </FormGroup>
+        </Col>
+        <Col md={4}>
+        
+
+        <FormGroup>
+                    <Label for="remarks">Dead Backlogs</Label>
+                    <Input type="plaintext" name="remarks" id="remarks" />
+                </FormGroup>
+                </Col>
+      </Row>
+               
+               
+                <p><h3>4. Selection Procedure</h3></p>
+
                 <FormGroup>
                     <Label for="visitSchedulePreference">Preffered week/date of visit</Label>
-                    <Input type="text" name="visitSchedulePreference" id="visitSchedulePreference" />
+                    <Input type="text" name="visitSchedulePreference" id="visitSchedulePreference" placeholder="e.g. dd/mm/yyyy - dd/mm/yyyy"/>
+                </FormGroup>
+                <Row form>
+                    <Col md={4}>
+                    <FormGroup>
+                    <Label for="remarks">Written Tests</Label>
+                    <Input type="plaintext" name="remarks" id="remarks" />
+                </FormGroup>
+                    </Col>
+                    <Col md={4}>
+                    <FormGroup>
+                    <Label for="remarks">Online Rounds</Label>
+                    <Input type="plaintext" name="remarks" id="remarks" />
+                </FormGroup>
+                    </Col>
+                    <Col md={4}>
+                    <FormGroup>
+                    <Label for="remarks">Group Discussion Round</Label>
+                    <Input type="plaintext" name="remarks" id="remarks" />
+                </FormGroup>
+                    </Col>
+                    <Col md={4}>
+                    <FormGroup>
+                    <Label for="remarks">Technical Rounds</Label>
+                    <Input type="plaintext" name="remarks" id="remarks" />
+                </FormGroup>
+                    </Col>
+                    <Col md={4}>
+                    <FormGroup>
+                    <Label for="remarks">HR Rounds</Label>
+                    <Input type="plaintext" name="remarks" id="remarks" />
+                </FormGroup>
+                    </Col>
+                </Row>
+            
+
+                <p><h3>5. Requirements</h3></p>
+                <FormGroup>
+                    <Label for="remarks">No. of panels visiting</Label>
+                    <Input type="plaintext" name="remarks" id="remarks" />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="eligibilityCriteria">Eligibility Criteria</Label>
-                    <Input type="text" name="eligibilityCriteria" id="eligibilityCriteria" />
+                    <Label for="remarks">Infrastructure Requirements</Label>
+                    <Input type="plaintext" name="remarks" id="remarks" />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="ctcOffered">CTC Offered</Label>
-                    <Input type="text" name="ctcOffered" id="ctcOffered" />
+                    <Label for="remarks">Any other specific Requirements</Label>
+                    <Input type="plaintext" name="remarks" id="remarks" />
                 </FormGroup>
+                <p><h3>6. Any other information to be shared with students:</h3></p>
                 <FormGroup>
-                    <Label for="jdFile">Job Desciption</Label>
-                    <Input type="file" name="jdFile" id="jdFile" />
-                </FormGroup>
-                <FormGroup>
-                    <Label for="remarks">Remarks</Label>
                     <Input type="textarea" name="remarks" id="remarks" />
                 </FormGroup>
+
                 <Button color="dark" id="submitButton" block>Submit</Button>
                 </Form>                  
             </div>
