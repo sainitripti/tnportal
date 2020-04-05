@@ -33,4 +33,9 @@ body {
 
 .login-card, .register-card {
     width: 50%;
+    min-width: 400px;
+}
+
+.margin-top {
+    margin-top: 1em;
 }
