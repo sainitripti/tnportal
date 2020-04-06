@@ -5,7 +5,6 @@ import {
     FormGroup,
     Label,
     Input,
-    NavLink,
     Alert
 } from 'reactstrap';
 import { connect } from 'react-redux';

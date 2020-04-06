@@ -10,7 +10,6 @@ import {
     FormGroup,
     Label,
     Input,
-    NavLink,
     Alert,
     Card,
     CardBody,
@@ -50,7 +49,7 @@ class AdminResultPage extends Component {
     componentDidUpdate(prevProps) {
         const {error} = this.props;
         if(error !== prevProps.error){
-            //Check for Register Error
+ 
             if(error.id === 'RESULT_ADD_FAIL'){
                 this.setState({ msg: error.msg.msg });
             }

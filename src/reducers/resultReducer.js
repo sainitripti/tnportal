@@ -4,7 +4,10 @@ import {
     RESULT_UPDATE_FAIL,
     RESULT_ADD_CLEAR,
     RESULT_ADD_SUCCESS,
-    RESULT_ADD_FAIL
+    RESULT_ADD_FAIL,
+    RESULT_EDIT_CLEAR,
+    RESULT_EDIT_SUCCESS,
+    RESULT_EDIT_FAIL
 } from '../actions/types';
 
 const initialState = {
@@ -32,12 +35,15 @@ export default function(state = initialState, action) {
                 isUpdating: false
             };
         case RESULT_ADD_CLEAR:
+        case RESULT_EDIT_CLEAR:
             return {
                 ...state,
                 msg: null
             };
         case RESULT_ADD_SUCCESS:
         case RESULT_ADD_FAIL:
+        case RESULT_EDIT_SUCCESS:
+        case RESULT_EDIT_FAIL:
             return {
                 ...state,
                 msg: action.payload.msg
