@@ -30,8 +30,7 @@ class AdminResultPage extends Component {
         ctcFTE:"0",
         massRecruitment: null,
         arrayIntern: null,
-        arrayFTE: null,
-        msg: null
+        arrayFTE: null
     };
 
     static propTypes = {
@@ -44,19 +43,6 @@ class AdminResultPage extends Component {
     
     componentDidMount() { 
         this.props.getResults();     
-    }
-
-    componentDidUpdate(prevProps) {
-        const {error} = this.props;
-        if(error !== prevProps.error){
- 
-            if(error.id === 'RESULT_ADD_FAIL'){
-                this.setState({ msg: error.msg.msg });
-            }
-            else {
-                this.setState({ msg: null });
-            }
-        }
     }
 
     onChange = e => {

@@ -20,11 +20,12 @@ import {
     InputGroup
 } from 'reactstrap';
 import './css/ResultCard.css';
-import { modifyResult } from '../actions/resultActions';
+import { modifyResult, deleteResult } from '../actions/resultActions';
 
 class AdminResultCard extends Component {
     state = {
         modal:false,
+        deleteModal: false,
         companyName: null,
         dateOfAnnouncement: null,
         profile: null,
@@ -34,27 +35,14 @@ class AdminResultCard extends Component {
         ctcFTE:"0",
         massRecruitment: null,
         arrayIntern: null,
-        arrayFTE: null,
-        msg: null
+        arrayFTE: null
     };
 
     static propTypes = {
         msg: PropTypes.string,
-        modifyResult: PropTypes.func.isRequired
+        modifyResult: PropTypes.func.isRequired,
+        deleteResult: PropTypes.func.isRequired
     };
-
-    componentDidUpdate(prevProps) {
-        const {error} = this.props;
-        if(error !== prevProps.error){
-
-            if(error.id === 'RESULT_EDIT_FAIL'){
-                this.setState({ msg: error.msg.msg });
-            }
-            else {
-                this.setState({ msg: null });
-            }
-        }
-    }
 
     onSubmit = e => {
         e.preventDefault();
@@ -96,12 +84,21 @@ class AdminResultCard extends Component {
         }
     }
 
+    onDeleteButtonClick = () => {
+        if(this.props.result && this.props.result._id){
+            this.props.deleteResult(this.props.result._id);
+        }
+    }
 
     toggle = () => {
-        //Clear error
-        //this.props.clearErrors();
         this.setState({
             modal: !this.state.modal
+        });
+    };
+
+    toggleDeleteModal = () => {
+        this.setState({
+            deleteModal: !this.state.deleteModal
         });
     };
 
@@ -113,13 +110,23 @@ class AdminResultCard extends Component {
         let {result} = this.props;
         return (
             <div>
+                <Modal isOpen={this.state.deleteModal} toggle={this.toggleDeleteModal}>
+                    <ModalHeader toggle={this.toggleDeleteModal}>Delete Result</ModalHeader>
+                    <ModalBody>
+                        { this.state.deleteModal && this.props.msg ? <Alert>{ this.props.msg }</Alert>           
+                        : null }
+                        <p>Are you sure you want to delete this result?</p>
+                        <Button color="danger" onClick={this.onDeleteButtonClick} style={{ marginTop: '2rem'}}>
+                            Yes, Delete Result
+                        </Button>
+                        <Button color="dark" style={{ marginTop: '2rem'}}>
+                            No
+                        </Button>
+                    </ModalBody>
+                </Modal>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Edit Result</ModalHeader>
                     <ModalBody>
-                        
-                        { this.state.msg ? <Alert color="danger">{ this.state.msg }</Alert>
-                             
-                        : null }
                         <Form onSubmit={this.onSubmit}>
                             <FormGroup>           
                                 <div className="row">  
@@ -259,7 +266,7 @@ class AdminResultCard extends Component {
                                 <Button color="dark" style={{ marginTop: '2rem'}}>
                                     Submit Result
                                 </Button>
-                                { this.props.msg ? <Alert>{ this.props.msg }</Alert>           
+                                { this.state.modal && this.props.msg ? <Alert>{ this.props.msg }</Alert>           
                                 : null }
                             </FormGroup>
                         </Form>
@@ -269,7 +276,7 @@ class AdminResultCard extends Component {
                 <Card className="mb-3 custom-width custom-margin">
 				<CardHeader className="dark-mode">
                     {result.companyName}            
-                    <Button className="delete-button btn-sm"><i className="fa fa-trash"></i> Delete Result</Button>
+                    <Button className="delete-button btn-sm" onClick={this.toggleDeleteModal}><i className="fa fa-trash"></i> Delete Result</Button>
                     <Button className="edit-button btn-sm" onClick={this.toggle}><i className="fa fa-edit"></i> Edit Result</Button>
                 </CardHeader>
 				<CardBody>
@@ -340,6 +347,6 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    { modifyResult }
+    { modifyResult, deleteResult }
 )
 (AdminResultCard);

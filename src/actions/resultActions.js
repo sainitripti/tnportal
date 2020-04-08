@@ -9,7 +9,10 @@ import {
     RESULT_ADD_CLEAR,
     RESULT_EDIT_CLEAR,
     RESULT_EDIT_SUCCESS,
-    RESULT_EDIT_FAIL
+    RESULT_EDIT_FAIL,
+    RESULT_DELETE_CLEAR,
+    RESULT_DELETE_SUCCESS,
+    RESULT_DELETE_FAIL
 } from './types';
 
 
@@ -73,6 +76,26 @@ export const modifyResult = (resultId, {companyName, dateOfAnnouncement, numTota
         })
 }
 
+//Delete result with id
+export const deleteResult = (resultId) => (dispatch, getState) => {
+    
+    //Clear previous messages
+    dispatch({ type: RESULT_DELETE_CLEAR });
+
+    //Request body
+    axios.delete(`http://localhost:5000/api/results/${resultId}` , tokenConfig(getState))
+        .then(res => dispatch({
+            type: RESULT_DELETE_SUCCESS,
+            payload: res.data
+        }))
+        .catch(err => {
+            dispatch({
+                type: RESULT_DELETE_FAIL,
+                payload: err.response.data
+            });
+        })
+}
+ 
 //Setup config/headers and token
 export const tokenConfig = getState => {
 

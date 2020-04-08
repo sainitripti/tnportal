@@ -7,7 +7,10 @@ import {
     RESULT_ADD_FAIL,
     RESULT_EDIT_CLEAR,
     RESULT_EDIT_SUCCESS,
-    RESULT_EDIT_FAIL
+    RESULT_EDIT_FAIL,
+    RESULT_DELETE_CLEAR,
+    RESULT_DELETE_SUCCESS,
+    RESULT_DELETE_FAIL
 } from '../actions/types';
 
 const initialState = {
@@ -36,6 +39,7 @@ export default function(state = initialState, action) {
             };
         case RESULT_ADD_CLEAR:
         case RESULT_EDIT_CLEAR:
+        case RESULT_DELETE_CLEAR:
             return {
                 ...state,
                 msg: null
@@ -44,6 +48,8 @@ export default function(state = initialState, action) {
         case RESULT_ADD_FAIL:
         case RESULT_EDIT_SUCCESS:
         case RESULT_EDIT_FAIL:
+        case RESULT_DELETE_SUCCESS:
+        case RESULT_DELETE_FAIL:
             return {
                 ...state,
                 msg: action.payload.msg
