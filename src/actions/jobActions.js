@@ -87,13 +87,43 @@ export const addNewJob = ({
 }
 
 //Modify exisiting job with job id
-export const modifyJob = (jobId, {companyName, dateOfAnnouncement, numTotalSelects, numIntern, numFTE, ctcIntern, ctcFTE, isMassRecruitment, arIntern, arFTE, profile}) => (dispatch, getState) => {
+export const modifyJob = (jobId, {
+    drive,
+    profile,
+    role,
+    location,
+    domain,
+    targetBatchYear,
+    targetCourses,
+    visitDate,
+    lastDateToRegister,
+    dateOfJobPosting,
+    compensationOffered,
+    eligibilityCriteria,
+    selectionProcedure,
+    description,
+    otherInfoForStudents}) => (dispatch, getState) => {
 
     //Clear previous messages
     dispatch({ type: JOB_EDIT_CLEAR });
 
     //Request body
-    const body = JSON.stringify({companyName, dateOfAnnouncement, numTotalSelects, numIntern, numFTE, ctcIntern, ctcFTE, isMassRecruitment, arIntern, arFTE, profile});
+    const body = JSON.stringify({
+        drive,
+        profile,
+        role,
+        location,
+        domain,
+        targetBatchYear,
+        targetCourses,
+        visitDate,
+        lastDateToRegister,
+        dateOfJobPosting,
+        compensationOffered,
+        eligibilityCriteria,
+        selectionProcedure,
+        description,
+        otherInfoForStudents});
     axios.put(`http://localhost:5000/api/jobs/${jobId}` , body, tokenConfig(getState))
         .then(res => dispatch({
             type: JOB_EDIT_SUCCESS,

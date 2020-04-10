@@ -116,10 +116,10 @@ class AdminResultCard extends Component {
                         { this.state.deleteModal && this.props.msg ? <Alert>{ this.props.msg }</Alert>           
                         : null }
                         <p>Are you sure you want to delete this result?</p>
-                        <Button color="danger" onClick={this.onDeleteButtonClick} style={{ marginTop: '2rem'}}>
+                        <Button color="danger" onClick={this.onDeleteButtonClick} style={{ margin: '1rem'}}>
                             Yes, Delete Result
                         </Button>
-                        <Button color="dark" style={{ marginTop: '2rem'}}>
+                        <Button color="dark" onClick={this.toggleDeleteModal} style={{ margin: '1rem'}}>
                             No
                         </Button>
                     </ModalBody>
