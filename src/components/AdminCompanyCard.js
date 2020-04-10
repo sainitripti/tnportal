@@ -212,7 +212,7 @@ class AdminCompanyCard extends Component {
                         { this.state.deleteModal && this.props.msg ? <Alert>{ this.props.msg }</Alert>           
                         : null }
                         <p>Are you sure you want to delete this job?</p>
-                        <Button color="danger" onClick={this.onDeleteButtonClick} style={{ marginTop: '1rem'}}>
+                        <Button color="danger" onClick={this.onDeleteButtonClick} style={{ margin: '1rem'}}>
                             Yes, Delete Job
                         </Button>
                         <Button color="dark" onClick={this.toggleDeleteModal} style={{ margin: '1rem'}}>
