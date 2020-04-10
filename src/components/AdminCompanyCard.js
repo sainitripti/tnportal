@@ -176,9 +176,7 @@ class AdminCompanyCard extends Component {
 							: null
 						}		
 						</tbody>
-					</Table>
-				
-					<button type="button" className="btn btn-outline-success">Register</button>         
+					</Table>      
 				</CardBody>
 				<CardFooter>
 					<div>

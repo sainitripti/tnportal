@@ -69,7 +69,7 @@ class AdminResultPage extends Component {
         const numTotalSelects = numIntern + numFTE;
         numTotalSelects.toString();
         const isMassRecruitment = massRecruitment ? true: false;
-        //Create a user object
+        //Create a result object
         const newResult = {
             companyName,
             dateOfAnnouncement,
