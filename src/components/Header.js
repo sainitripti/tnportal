@@ -42,6 +42,7 @@ class Header extends Component {
                     <Nav.Link href="/admin-calender">Calender</Nav.Link>
                     <Nav.Link href="/admin-notification">Notification</Nav.Link>
                     <Nav.Link href="/admin-result">Result</Nav.Link>
+                    <Nav.Link href="/view-registrations">View Registrations</Nav.Link>
                     <Logout></Logout>
                 </Nav>
             </Fragment>

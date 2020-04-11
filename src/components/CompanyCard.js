@@ -1,9 +1,47 @@
 import React, { Component } from 'react';
 import { CardHeader, CardBody, Card, CardFooter, Table } from 'reactstrap';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { registerForDrive, unregisterForDrive } from '../actions/registrationActions';
 
 import 'font-awesome/css/font-awesome.min.css';
 
 class CompanyCard extends Component {
+
+	constructor() {
+		super();
+		this.onRegisterClick = this.onRegisterClick.bind(this);
+		this.onUnregisterClick = this.onUnregisterClick.bind(this);
+	}
+	
+    static propTypes = {
+        user: PropTypes.object.isRequired,
+		registerForDrive: PropTypes.func.isRequired,
+		unregisterForDrive: PropTypes.func.isRequired
+    };
+
+	onRegisterClick() {
+		const drive = this.props.job.drive;
+		const enrollmentNum = this.props.user.enrollmentNum;
+		//Create a new registration object
+		const newRegistration = {
+			drive,
+			enrollmentNum
+		};
+		this.props.registerForDrive(newRegistration);
+	}
+
+	onUnregisterClick() {
+		const drive = this.props.job.drive;
+		const enrollmentNum = this.props.user.enrollmentNum;
+		//Create a new registration object
+		const newRegistration = {
+			drive,
+			enrollmentNum
+		};
+		this.props.unregisterForDrive(newRegistration);
+	}
+
     render() {
 		let batches = "";
 		this.props.job.targetBatchYear.forEach(batch => {
@@ -174,7 +212,7 @@ class CompanyCard extends Component {
 						</tbody>
 					</Table>
 				
-					<button type="button" className="btn btn-outline-success">Register</button>         
+					<button type="button" className="btn btn-outline-success" onClick={this.onRegisterClick}>Register</button>   
 				</CardBody>
 				<CardFooter>
 					<div>
@@ -186,5 +224,11 @@ class CompanyCard extends Component {
         )
     }
 }
-
-export default CompanyCard;
+const mapStateToProps = state => ({
+    user: state.auth.user
+});
+export default connect(
+    mapStateToProps,
+    { registerForDrive, unregisterForDrive }
+)
+(CompanyCard);

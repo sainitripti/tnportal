@@ -20,6 +20,7 @@ import DashboardPage from './components/DashboardPage';
 import AdminDashboardPage from './components/AdminDashboardPage';
 import ResultPage from './components/ResultPage';
 import AdminResultPage from './components/AdminResultPage';
+import DriveRegistrationsPage from './components/DriveRegistrationsPage';
 
 import store from './store';
 
@@ -64,6 +65,7 @@ class App extends Component {
                   { isAuthenticated && user.role==="ADMIN" && <Route path="/admin-dashboard" exact component={AdminDashboardPage}/> }
                   { isAuthenticated && user.role==="STUDENT" && <Route path="/student-result" exact component={ResultPage}/> }
                   { isAuthenticated && user.role==="ADMIN" && <Route path="/admin-result" exact component={AdminResultPage}/> }
+                  { isAuthenticated && user.role==="ADMIN" && <Route path="/view-registrations" exact component={DriveRegistrationsPage}/> }
                   <Route path="/" exact component={HomePage} />
                   <Route path="/*" component={PageNotFound} />
                 </Switch>
