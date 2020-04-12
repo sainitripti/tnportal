@@ -18,7 +18,7 @@ class NewLoginPage extends Component {
         isAuthenticated: PropTypes.bool,
         error: PropTypes.object.isRequired,
         login: PropTypes.func.isRequired,
-        user: PropTypes.object.isRequired,
+        user: PropTypes.object,
         clearErrors: PropTypes.func.isRequired
     };
 
