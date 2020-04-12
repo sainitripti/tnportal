@@ -10,13 +10,15 @@ class NewLoginPage extends Component {
     state = {
         enrollmentNum: null,
         password: null,
-        msg: null
+        msg: null,
+        user: null
     };
 
     static propTypes = {
         isAuthenticated: PropTypes.bool,
         error: PropTypes.object.isRequired,
         login: PropTypes.func.isRequired,
+        user: PropTypes.object.isRequired,
         clearErrors: PropTypes.func.isRequired
     };
 
@@ -28,7 +30,7 @@ class NewLoginPage extends Component {
                 this.setState({ msg: error.msg.msg });
             }
             else {
-                this.setState({ msg: null });
+                this.setState({ msg: null, user: this.props.user });
             }
         }
 
@@ -54,6 +56,7 @@ class NewLoginPage extends Component {
 
         //Attempt to login
         this.props.login(user);
+        console.log(this.props.user);
     }
 
     render() {
@@ -106,6 +109,7 @@ class NewLoginPage extends Component {
 
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
+    user: state.auth.user,
     error: state.error
 });
 

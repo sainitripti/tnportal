@@ -32,11 +32,11 @@ class RegisterPage extends Component {
         clearErrors: PropTypes.func.isRequired
     };
 
-    componentDidUpdate(prevProps){
-        const {error, isAuthenticated} = this.props;
-        if(error !== prevProps.error){
+    componentDidUpdate(prevProps) {
+        const { error, isAuthenticated } = this.props;
+        if (error !== prevProps.error) {
             //Check for Register Error
-            if(error.id === 'REGISTER_FAIL'){
+            if (error.id === 'REGISTER_FAIL') {
                 this.setState({ msg: error.msg.msg });
             }
             else {
@@ -45,8 +45,8 @@ class RegisterPage extends Component {
         }
 
         //If authenticated, close modal
-        if(this.state.modal){
-            if(isAuthenticated){
+        if (this.state.modal) {
+            if (isAuthenticated) {
                 this.toggle();
             }
         }
@@ -78,7 +78,8 @@ class RegisterPage extends Component {
 
         //Attempt to register
         this.props.register(newUser);
-    }
+        this.props.history.push('/dashboard');
+    };
 
     render() {
         return (
@@ -89,12 +90,12 @@ class RegisterPage extends Component {
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Register</ModalHeader>
                     <ModalBody>
-                        
-                        { this.state.msg ? <Alert color="danger">{ this.state.msg }</Alert>
-                             
-                        : null }
+
+                        {this.state.msg ? <Alert color="danger">{this.state.msg}</Alert>
+
+                            : null}
                         <Form onSubmit={this.onSubmit}>
-                            <FormGroup>                                                       
+                            <FormGroup>
                                 <Label for="enrollmentNum">Enrollment Num</Label>
                                 <Input
                                     type="text"
@@ -119,7 +120,7 @@ class RegisterPage extends Component {
                                     placeholder="Role"
                                     onChange={this.onChange}
                                 />
-                                <Button color="dark" style={{ marginTop: '2rem'}} block>
+                                <Button color="dark" style={{ marginTop: '2rem' }} block>
                                     Register
                                 </Button>
                             </FormGroup>
@@ -127,7 +128,7 @@ class RegisterPage extends Component {
                     </ModalBody>
                 </Modal>
             </div>
-        )
+        );
     }
 }
 
@@ -140,4 +141,4 @@ export default connect(
     mapStateToProps,
     { register, clearErrors }
 )
-(RegisterPage);
+    (RegisterPage);

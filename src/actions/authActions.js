@@ -69,10 +69,12 @@ export const login = ({enrollmentNum, password}) => dispatch => {
     //Request body
     const body = JSON.stringify({enrollmentNum, password});
     axios.post('http://localhost:5000/api/auth', body, config)
-        .then(res => dispatch({
+        .then(res => {
+            dispatch({
             type: LOGIN_SUCCESS,
             payload: res.data
-        }))
+        });
+    })
         .catch(err => {
             dispatch(returnErrors(err.response.data, err.response.status, 'LOGIN_FAIL'));
             dispatch({
