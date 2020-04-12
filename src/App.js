@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
 
 import HomePage from "./components/HomePage";
 import NewLoginPage from "./components/NewLoginPage";
@@ -28,6 +28,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { loadUser } from './actions/authActions';
+import RegisterPage from "./components/RegisterPage";
 
 class App extends Component {
 
@@ -51,22 +52,25 @@ class App extends Component {
                 <Header></Header>
                 <Router>
                 <Switch>    
-                  <Route path="/login" exact component={NewLoginPage} />
+                  { 
+                    !isAuthenticated ? <Route path="/login" component={NewLoginPage} />
+                    : (isAuthenticated && user.role === "STUDENT" ? <Route path="/student-dashboard" exact component={DashboardPage}/> : <Route path="/admin-dashboard" exact component={AdminDashboardPage}/>)
+                  }
+                  <Route path="/register" exact component={NewRegisterPage} />
                   <Route path="/history" exact component={HistoryPage} />
                   <Route path="/alumni" exact component={AlumniPage} />
                   <Route path="/faculty-research" exact component={FacultyResearchPage} />
                   <Route path="/courses-offered" exact component={CoursesOfferedPage} />
                   <Route path="/students-achievements-awards" exact component={AchievementsPage} />
                   <Route path="/procedure" exact component={ProcedurePage} />
-                  <Route path="/register" exact component={NewRegisterPage} />
                   <Route path="/contact-us" exact component={ContactUsPage} />
                   <Route path="/company-register" exact component={CompanyRegisterPage} />
-                  { isAuthenticated && user.role==="STUDENT" && <Route path="/student-dashboard" exact component={DashboardPage}/> }
-                  { isAuthenticated && user.role==="ADMIN" && <Route path="/admin-dashboard" exact component={AdminDashboardPage}/> }
-                  { isAuthenticated && user.role==="STUDENT" && <Route path="/student-result" exact component={ResultPage}/> }
-                  { isAuthenticated && user.role==="ADMIN" && <Route path="/admin-result" exact component={AdminResultPage}/> }
-                  { isAuthenticated && user.role==="ADMIN" && <Route path="/view-registrations" exact component={DriveRegistrationsPage}/> }
-                  { isAuthenticated && user.role==="STUDENT" && <Route path="/view-registrations" exact component={DriveRegistrationsPage}/> }
+                  { isAuthenticated && user.role==="ADMIN" ? <Route path="/admin-dashboard" exact component={AdminDashboardPage}/> : <Redirect to="/login" /> }
+                  { isAuthenticated && user.role==="STUDENT" ? <Route path="/student-dashboard" exact component={DashboardPage}/> : <Redirect to="/login" /> }
+                  { isAuthenticated && user.role==="STUDENT" ? <Route path="/student-result" exact component={ResultPage}/> : <Redirect to="/login" />}
+                  { isAuthenticated && user.role==="ADMIN" ? <Route path="/admin-result" exact component={AdminResultPage}/> : <Redirect to="/login" />}
+                  { isAuthenticated && user.role==="ADMIN" ? <Route path="/view-registrations" exact component={DriveRegistrationsPage}/> : <Redirect to="/login" />}
+                  { isAuthenticated && user.role==="STUDENT" ? <Route path="/view-registrations" exact component={DriveRegistrationsPage}/> : <Redirect to="/login" />}
                   <Route path="/" exact component={HomePage} />
                   <Route path="/*" component={PageNotFound} />
                 </Switch>
