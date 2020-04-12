@@ -3,20 +3,15 @@ import { CardHeader, CardBody, Card } from 'reactstrap';
 
 class DriveWiseRegistrations extends Component {
     render() {
-        let students = [];
-        let {registrations} = this.props;
-        registrations.forEach(registration => {
-            if(registration.drive === this.props.drive){
-                students.push(registration.enrollmentNum);
-            }
-        });
+        let {driveRegistrations} = this.props;
+        
         return (
             <Card className="mb-3 custom-width custom-margin">
-				<CardHeader className="dark-mode">List of students registered for {this.props.drive}</CardHeader>
+				<CardHeader className="dark-mode">List of students registered for {driveRegistrations.drive}</CardHeader>
 				<CardBody>
                     <ol>
-                        {students.map(function(student) {
-                            return <li key={student}>{student}</li>
+                        {driveRegistrations.arEnrollmentNum.map(function(enrollmentNum) {
+                            return <li key={enrollmentNum}>{enrollmentNum}</li>
                         })}
                     </ol>
                 </CardBody>

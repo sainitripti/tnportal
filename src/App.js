@@ -66,6 +66,7 @@ class App extends Component {
                   { isAuthenticated && user.role==="STUDENT" && <Route path="/student-result" exact component={ResultPage}/> }
                   { isAuthenticated && user.role==="ADMIN" && <Route path="/admin-result" exact component={AdminResultPage}/> }
                   { isAuthenticated && user.role==="ADMIN" && <Route path="/view-registrations" exact component={DriveRegistrationsPage}/> }
+                  { isAuthenticated && user.role==="STUDENT" && <Route path="/view-registrations" exact component={DriveRegistrationsPage}/> }
                   <Route path="/" exact component={HomePage} />
                   <Route path="/*" component={PageNotFound} />
                 </Switch>

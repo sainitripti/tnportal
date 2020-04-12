@@ -30,6 +30,7 @@ class Header extends Component {
                     <Nav.Link href="/student-calender">Calender</Nav.Link>
                     <Nav.Link href="/student-notification">Notification</Nav.Link>
                     <Nav.Link href="/student-result">Result</Nav.Link>
+                    <Nav.Link href="/view-registrations">View Registrations</Nav.Link>
                     <Logout></Logout>
                 </Nav>
             </Fragment>

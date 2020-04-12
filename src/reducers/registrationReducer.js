@@ -7,18 +7,19 @@ import {
     REGISTRATION_ADD_FAIL,
     REGISTRATION_DELETE_CLEAR,
     REGISTRATION_DELETE_SUCCESS,
-    REGISTRATION_DELETE_FAIL
+    REGISTRATION_DELETE_FAIL,
+    REGISTRATION_MESSAGE_CLEAR
 } from '../actions/types';
 
 const initialState = {
     isUpdating: false,
-    registrations: [],
+    driveWiseRegistrations: [],
     msg: null
 };
 
 export default function(state = initialState, action) {
     switch(action.type){
-        case REGISTRATION_UPDATING: 
+        case REGISTRATION_UPDATING:
             return {
                 ...state,
                 isUpdating: true
@@ -27,7 +28,7 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 isUpdating: false,
-                registrations: action.payload
+                driveWiseRegistrations: action.payload
             };
         case REGISTRATION_UPDATE_FAIL:
             return {
@@ -36,6 +37,7 @@ export default function(state = initialState, action) {
             };
         case REGISTRATION_ADD_CLEAR:
         case REGISTRATION_DELETE_CLEAR:
+        case REGISTRATION_MESSAGE_CLEAR:
             return {
                 ...state,
                 msg: null

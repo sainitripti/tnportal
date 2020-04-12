@@ -9,8 +9,14 @@ import {
     REGISTRATION_ADD_FAIL,
     REGISTRATION_DELETE_CLEAR,
     REGISTRATION_DELETE_SUCCESS,
-    REGISTRATION_DELETE_FAIL
+    REGISTRATION_DELETE_FAIL,
+    REGISTRATION_MESSAGE_CLEAR
 } from './types';
+
+//Clear message
+export const clearRegistrationMessage = () => (dispatch, getState) => {
+    dispatch({ type: REGISTRATION_MESSAGE_CLEAR });
+}
 
 //Get all registrations
 export const getRegistrations = () => (dispatch, getState) => {
@@ -18,7 +24,7 @@ export const getRegistrations = () => (dispatch, getState) => {
     //Jobs updating
     dispatch({ type: REGISTRATION_UPDATING });
 
-    axios.get('http://localhost:5000/api/registrations', tokenConfig(getState))
+    axios.get('http://localhost:5000/api/drive-wise-registrations', tokenConfig(getState))
         .then(res => dispatch({
             type: REGISTRATION_UPDATE_SUCCESS,
             payload: res.data
@@ -30,16 +36,15 @@ export const getRegistrations = () => (dispatch, getState) => {
         })
 }
 
-
 //Register for a drive
-export const registerForDrive = ({drive, enrollmentNum}) => (dispatch, getState) => {
+export const registerForDrive = ({drive, arEnrollmentNum}) => (dispatch, getState) => {
     
     //Clear previous messages
     dispatch({ type: REGISTRATION_ADD_CLEAR });
 
     //Request body
-    const body = JSON.stringify({drive, enrollmentNum});
-    axios.post('http://localhost:5000/api/registrations', body, tokenConfig(getState))
+    const body = JSON.stringify({drive, arEnrollmentNum});
+    axios.post('http://localhost:5000/api/drive-wise-registrations', body, tokenConfig(getState))
         .then(res => dispatch({
             type: REGISTRATION_ADD_SUCCESS,
             payload: res.data
@@ -60,7 +65,7 @@ export const unregisterForDrive = ({drive, enrollmentNum}) => (dispatch, getStat
 
     //Request body
     const body = JSON.stringify({drive, enrollmentNum});
-    axios.delete('http://localhost:5000/api/registrations', body, tokenConfig(getState))
+    axios.put('http://localhost:5000/api/drive-wise-registrations', body, tokenConfig(getState))
         .then(res => dispatch({
             type: REGISTRATION_DELETE_SUCCESS,
             payload: res.data

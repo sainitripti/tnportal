@@ -7,7 +7,7 @@ import DriveWiseRegistrations from './DriveWiseRegistrations';
 class DriveRegistrationsPage extends Component {
 
     static propTypes = {
-        registrations: PropTypes.array.isRequired,
+        driveWiseRegistrations: PropTypes.array.isRequired,
         getRegistrations: PropTypes.func.isRequired
     };
     
@@ -16,21 +16,18 @@ class DriveRegistrationsPage extends Component {
     }
 
     render() {
-        const {registrations} = this.props;
-        let drives = [...new Set(registrations.map(registration => registration.drive))]; 
+        const {driveWiseRegistrations} = this.props;
         
         return (          
             <div> 		
-                {drives.map(function(drive, index) {
-                    return <DriveWiseRegistrations key={drive} registrations = {registrations} drive = {drive}/>;
-                })}               
+                {driveWiseRegistrations.map(driveRegistrations=> <DriveWiseRegistrations key={driveRegistrations.drive} driveRegistrations = {driveRegistrations}/>)}     
             </div>  
         )
     }
 }
 
 const mapStateToProps = state => ({
-    registrations: state.registration.registrations
+    driveWiseRegistrations: state.registration.driveWiseRegistrations
 });
 
 export default connect(

@@ -18,15 +18,18 @@ class CompanyCard extends Component {
         user: PropTypes.object.isRequired,
 		registerForDrive: PropTypes.func.isRequired,
 		unregisterForDrive: PropTypes.func.isRequired
-    };
+	};
+	
+	
 
 	onRegisterClick() {
 		const drive = this.props.job.drive;
-		const enrollmentNum = this.props.user.enrollmentNum;
+		let arEnrollmentNum = [];
+		arEnrollmentNum.push(this.props.user.enrollmentNum);
 		//Create a new registration object
 		const newRegistration = {
 			drive,
-			enrollmentNum
+			arEnrollmentNum
 		};
 		this.props.registerForDrive(newRegistration);
 	}
@@ -212,7 +215,8 @@ class CompanyCard extends Component {
 						</tbody>
 					</Table>
 				
-					<button type="button" className="btn btn-outline-success" onClick={this.onRegisterClick}>Register</button>   
+					<button type="button" className="btn btn-primary" style={{ margin: '1rem'}} onClick={this.onRegisterClick}>Register</button> 
+					<button type="button" className="btn btn-secondary" style={{ margin: '1rem'}} onClick={this.onUnregisterClick}>Unregister</button>    
 				</CardBody>
 				<CardFooter>
 					<div>
@@ -225,7 +229,7 @@ class CompanyCard extends Component {
     }
 }
 const mapStateToProps = state => ({
-    user: state.auth.user
+	user: state.auth.user
 });
 export default connect(
     mapStateToProps,
