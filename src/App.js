@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 import HomePage from "./components/HomePage";
 import NewLoginPage from "./components/NewLoginPage";
@@ -28,7 +28,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { loadUser } from './actions/authActions';
-import RegisterPage from "./components/RegisterPage";
 
 class App extends Component {
 
