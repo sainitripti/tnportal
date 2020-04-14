@@ -82,15 +82,15 @@ class ContactUsPage extends Component {
                         <div className="card-body">
                             <h5 className="card-title">Write to us</h5>
                             <div className="card-text">
-                            <div className="custom-margin">
+                            <div className="custom-margin custom-width">
                                 <i className="fa fa-envelope"></i>
                                 <a href="mailto:tpo@igdtuw.ac.in">&nbsp; Training &amp; Placement Office</a>
                             </div>
-                            <div className="custom-margin">
+                            <div className="custom-margin custom-width">
                                 <i className="fa fa-envelope"></i>
                                 <a href="mailto:jasdeep@igdtuw.ac.in">&nbsp; Dr. Jasdeep Kaur Dhanoa</a>
                             </div>
-                            <div className="custom-margin">
+                            <div className="custom-margin custom-width">
                                 <i className="fa fa-envelope"></i>
                                 <a href="mailto:nrchauhan@igdtuw.ac.in">&nbsp; Dr. Nathi Ram Chauhan</a>
                             </div>               
