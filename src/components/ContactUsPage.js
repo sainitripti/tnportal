@@ -7,9 +7,7 @@ import { Form, FormGroup, Input, Button, Label } from 'reactstrap';
 class ContactUsPage extends Component {
 
     state = {
-        name: '',
         email: '',
-        subject: '',
         textBody: ''
     };
 
@@ -19,6 +17,8 @@ class ContactUsPage extends Component {
 
     onSubmit = e => {
         e.preventDefault();
+        const {email, textBody} = this.state;
+
     }
     
     render() {
@@ -82,51 +82,18 @@ class ContactUsPage extends Component {
                         <div className="card-body">
                             <h5 className="card-title">Write to us</h5>
                             <div className="card-text">
-                            <Form onSubmit={this.onSubmit}>
-                                <FormGroup>                                                       
-                                    <Label for="name">Name: </Label>
-                                    <Input
-                                        type="text"
-                                        name="name"
-                                        id="name"
-                                        placeholder="Mr/Ms. ABC"
-                                        onChange={this.onChange}
-                                    />
-                                </FormGroup>
-                                <FormGroup> 
-                                    <Label for="email">Email: </Label>
-                                    <Input
-                                        type="email"
-                                        name="email"
-                                        id="email"
-                                        placeholder="abc@gmail.com"
-                                        onChange={this.onChange}
-                                    />
-                                </FormGroup>
-                                <FormGroup>
-                                    <Label for="subject">Subject: </Label>
-                                    <Input
-                                        type="text"
-                                        name="subject"
-                                        id="subject"
-                                        placeholder="Purpose of Writing"
-                                        onChange={this.onChange}
-                                    />
-                                </FormGroup>
-                                <FormGroup>
-                                    <Label for="textBody">Text Body: </Label>
-                                    <Input
-                                        type="textarea"
-                                        name="textBody"
-                                        id="textBody"
-                                        placeholder="Write here!"
-                                        onChange={this.onChange}
-                                    />
-                                </FormGroup>
-                                <Button color="dark" style={{ marginTop: '2rem'}} block>
-                                    Submit
-                                </Button>
-                            </Form>                            
+                            <div className="custom-margin">
+                                <i className="fa fa-envelope"></i>
+                                <a href="mailto:tpo@igdtuw.ac.in">&nbsp; Training &amp; Placement Office</a>
+                            </div>
+                            <div className="custom-margin">
+                                <i className="fa fa-envelope"></i>
+                                <a href="mailto:jasdeep@igdtuw.ac.in">&nbsp; Dr. Jasdeep Kaur Dhanoa</a>
+                            </div>
+                            <div className="custom-margin">
+                                <i className="fa fa-envelope"></i>
+                                <a href="mailto:nrchauhan@igdtuw.ac.in">&nbsp; Dr. Nathi Ram Chauhan</a>
+                            </div>               
                             </div>
                         </div>
                         </div>
