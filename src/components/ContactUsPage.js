@@ -2,24 +2,7 @@ import React, { Component } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
 import './css/ContactUsPage.css';
 
-import { Form, FormGroup, Input, Button, Label } from 'reactstrap';
-
 class ContactUsPage extends Component {
-
-    state = {
-        email: '',
-        textBody: ''
-    };
-
-    onChange = e => {
-        this.setState({ [e.target.name]: e.target.value });
-    };
-
-    onSubmit = e => {
-        e.preventDefault();
-        const {email, textBody} = this.state;
-
-    }
     
     render() {
         return (

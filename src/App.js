@@ -21,6 +21,7 @@ import AdminDashboardPage from './components/AdminDashboardPage';
 import ResultPage from './components/ResultPage';
 import AdminResultPage from './components/AdminResultPage';
 import DriveRegistrationsPage from './components/DriveRegistrationsPage';
+import StudentProfilePage from './components/StudentProfilePage';
 
 import store from './store';
 
@@ -84,6 +85,10 @@ class App extends Component {
                     !this.state.isAuthenticated ? <Route path="/student-dashboard" component={NewLoginPage} />
                     : (isAuthenticated && user.role === "STUDENT" && <Route path="/student-dashboard" exact component={DashboardPage}/>)
                   } 
+                  { 
+                    !this.state.isAuthenticated ? <Route path="/student-profile" component={NewLoginPage} />
+                    : (isAuthenticated && user.role === "STUDENT" && <Route path="/student-profile" exact component={StudentProfilePage}/>)
+                  }
                   { 
                     !this.state.isAuthenticated ? <Route path="/student-result" component={NewLoginPage} />
                     : (isAuthenticated && user.role === "STUDENT" && <Route path="/student-result" exact component={ResultPage}/>)

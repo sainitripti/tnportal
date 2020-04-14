@@ -5,6 +5,7 @@ import companyReducer from './companyReducer';
 import jobReducer from './jobReducer';
 import resultReducer from './resultReducer';
 import registrationReducer from './registrationReducer';
+import studentReducer from './studentReducer';
 
 export default combineReducers({
     error: errorReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
     company: companyReducer,
     job: jobReducer,
     result: resultReducer,
-    registration: registrationReducer
+    registration: registrationReducer,
+    student: studentReducer
 });

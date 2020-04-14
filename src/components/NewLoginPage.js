@@ -56,7 +56,6 @@ class NewLoginPage extends Component {
 
         //Attempt to login
         this.props.login(user);
-        console.log(this.props.user);
     }
 
     render() {
