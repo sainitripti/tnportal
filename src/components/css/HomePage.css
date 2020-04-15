@@ -33,9 +33,41 @@ body {
 
 .login-card, .register-card {
     width: 50%;
-    min-width: 400px;
+    min-width: 250px;
 }
 
 .margin-top {
     margin-top: 1em;
+}
+
+.auto-margin {
+    margin: 0 auto;
+}
+
+.top-margin {
+    margin-top: 0.75rem;
+}
+
+.map-style { 
+    border: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#submitButton {
+    margin: 2rem 0;
+}
+
+.card-title {
+    padding: 0 1.25rem;
+}
+
+.dark-mode {
+    background-color:  rgb(52, 58, 64);
+    color: #eee;
+}
+
+.achievement-card-title {
+    text-align: center;
+    margin: 0 auto;
 }

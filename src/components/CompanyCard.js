@@ -57,7 +57,7 @@ class CompanyCard extends Component {
 		})
 
         return (
-			<Card className="mb-3 custom-width custom-margin">
+			<Card className="custom-width custom-margin">
 				<CardHeader className="dark-mode">{this.props.job.drive}</CardHeader>
 				<CardBody>
 				<Table striped borderless>

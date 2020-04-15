@@ -20,13 +20,9 @@ class ResultPage extends Component {
         return (
                 <div className="content">
                 <div className="container-fluid">
-                <div className="col">
-                    <div className="col-xl-12">
                 {this.props.results.map(function(result, index) {
                     return <ResultCard key={result.companyName} result = {result}/>;
                 })}
-                </div>
-                </div>
                 </div>
             </div>
         )

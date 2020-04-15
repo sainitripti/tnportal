@@ -6,12 +6,11 @@ class Footer extends Component {
     render() {
         return (
             <footer>
-                <span>
-                    Copyright &copy; 2019
-                </span> | 
-                <span>
-                    Created by Tripti Saini, Nipun Soni, Harshita and Priyanka
-                </span>
+                <p>
+                    Copyright &copy; 2019 | Created by
+                    <br/>
+                    Tripti Saini, Nipun Soni, Harshita &amp; Priyanka
+                </p>
             </footer>
 
         )

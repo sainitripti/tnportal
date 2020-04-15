@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import './css/HistoryPage.css';
+import './css/HomePage.css';
 
 class HistoryPage extends Component {
     render() {

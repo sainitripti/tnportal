@@ -51,7 +51,6 @@ class Header extends Component {
                     <Nav.Link href="/">Home</Nav.Link>
                     <NavDropdown title="User" id="collasible-nav-dropdown-user">
                         <NavDropdown.Item href="/login">Login</NavDropdown.Item>
-                        <NavDropdown.Item href="/register">Register</NavDropdown.Item>
                     </NavDropdown>
                     <NavDropdown title="About Us" id="collasible-nav-dropdown-about-us">
                         <NavDropdown.Item href="/history">History</NavDropdown.Item>

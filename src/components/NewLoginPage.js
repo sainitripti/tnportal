@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { Form, FormGroup, Input, Button, Label, Alert } from 'reactstrap';
+import { Form, FormGroup, Input, Button, Label, Alert, Card, CardBody } from 'reactstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../actions/authActions';
 import { clearErrors } from '../actions/errorActions';
+import './css/HomePage.css';
 
 class NewLoginPage extends Component {
     
@@ -61,47 +62,45 @@ class NewLoginPage extends Component {
     render() {
 
         return (
-                <div className="custom-width custom-margin">
-                        <div className="card login-card custom-margin">
-                        <div className="card-body">
-                            <h5 className="card-title">User Login</h5>
-                            <div className="card-text">
-                            { this.state.msg ? 
-                            <Alert color="danger">{ this.state.msg }</Alert>
-                             
-                             : null }
-                             <br/>
-                            <Form onSubmit={this.onSubmit}>
-                                <FormGroup>                                                       
-                                    <Label for="enrollmentNum">Username</Label>
-                                    <Input
-                                        type="text"
-                                        name="enrollmentNum"
-                                        id="enrollmentNum"
-                                        placeholder="Username"
-                                        onChange={this.onChange}
-                                        required
-                                    />
-                                    <br/>
-                                    <Label for="password">Password</Label>
-                                    <Input
-                                        type="password"
-                                        name="password"
-                                        id="password"
-                                        placeholder="Password"
-                                        onChange={this.onChange}
-                                        required
-                                    />
-                                    <Button color="dark" style={{ marginTop: '2rem'}} block>
-                                        Login
-                                    </Button>
-                                </FormGroup>
-                            </Form>                      
-                            </div>
-                        </div>
-                        </div>
-                    </div>
+            <section className="custom-width custom-margin">
+            <Card className="login-card custom-margin">
+                <CardBody>
+                    <h5 className="card-title">User Login</h5>
 
+                    { this.state.msg ? 
+                    <Alert color="danger">{ this.state.msg }</Alert>
+                        
+                        : null }
+                        <br/>
+                    <Form onSubmit={this.onSubmit}>
+                        <FormGroup>                                                       
+                            <Label for="enrollmentNum">Username</Label>
+                            <Input
+                                type="text"
+                                name="enrollmentNum"
+                                id="enrollmentNum"
+                                placeholder="Username"
+                                onChange={this.onChange}
+                                required
+                            />
+                            <br/>
+                            <Label for="password">Password</Label>
+                            <Input
+                                type="password"
+                                name="password"
+                                id="password"
+                                placeholder="Password"
+                                onChange={this.onChange}
+                                required
+                            />
+                            <Button color="dark" style={{ marginTop: '2rem'}} block>
+                                Login
+                            </Button>
+                        </FormGroup>
+                    </Form>                      
+                </CardBody>
+            </Card>
+            </section>
         )
     }
 }

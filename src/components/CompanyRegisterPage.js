@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/CompanyRegisterPage.css';
+import './css/HomePage.css';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { addCompany, clearCompanyMessages } from '../actions/companyActions';

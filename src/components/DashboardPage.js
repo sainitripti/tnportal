@@ -50,8 +50,7 @@ class DashboardPage extends Component {
         return (
                 <div className="content">
                 <div className="container-fluid">
-                <div className="col">
-                    <div className="col-xl-12">
+                
                     
                     <Modal isOpen={this.state.modal}>
                         <ModalBody>
@@ -63,8 +62,7 @@ class DashboardPage extends Component {
                     {this.props.jobs.map(function(job, index) {
                         return <CompanyCard key={job.drive} job = {job}/>;
                     })}
-                </div>
-                </div>
+                
                 </div>
             </div>
         )
