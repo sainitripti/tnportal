@@ -18,7 +18,7 @@ export const loadUser = () => (dispatch, getState) => {
     //User loading
     dispatch({ type: USER_LOADING });
 
-    axios.get('http://localhost:5000/api/auth/user', tokenConfig(getState))
+    axios.get('https://tnpportal-backend-igdtuw.herokuapp.com/api/auth/user', tokenConfig(getState))
         .then(res => dispatch({
             type: USER_LOADED,
             payload: res.data
@@ -44,7 +44,7 @@ export const register = ({enrollmentNum, password, role}) => dispatch => {
 
     //Request body
     const body = JSON.stringify({enrollmentNum, password, role});
-    axios.post('http://localhost:5000/api/users', body, config)
+    axios.post('https://tnpportal-backend-igdtuw.herokuapp.com/api/users', body, config)
         .then(res => dispatch({
             type: REGISTER_SUCCESS,
             payload: res.data
@@ -68,7 +68,7 @@ export const login = ({enrollmentNum, password}) => dispatch => {
 
     //Request body
     const body = JSON.stringify({enrollmentNum, password});
-    axios.post('http://localhost:5000/api/auth', body, config)
+    axios.post('https://tnpportal-backend-igdtuw.herokuapp.com/api/auth', body, config)
         .then(res => {
             dispatch({
             type: LOGIN_SUCCESS,

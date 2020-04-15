@@ -20,7 +20,7 @@ export const getCompanies = () => (dispatch, getState) => {
     //Companies updating
     dispatch({ type: COMPANY_UPDATING });
 
-    axios.get('http://localhost:5000/api/companies', tokenConfig(getState))
+    axios.get('https://tnpportal-backend-igdtuw.herokuapp.com/api/companies', tokenConfig(getState))
         .then(res => dispatch({
             type: COMPANY_UPDATE_SUCCESS,
             payload: res.data
@@ -56,7 +56,7 @@ export const addCompany = ({
 
 
     axios
-        .post('http://localhost:5000/api/companies', body, tokenConfig(getState))
+        .post('https://tnpportal-backend-igdtuw.herokuapp.com/api/companies', body, tokenConfig(getState))
         .then(res => dispatch({
             type: COMPANY_ADD_SUCCESS,
             payload: res.data

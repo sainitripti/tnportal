@@ -12,7 +12,7 @@ export const getStudent = (enrollmentNum) => (dispatch, getState) => {
     
     dispatch({ type: STUDENT_UPDATING });
 
-    axios.get(`http://localhost:5000/api/students/${enrollmentNum}`, tokenConfig(getState))
+    axios.get(`https://tnpportal-backend-igdtuw.herokuapp.com/api/students/${enrollmentNum}`, tokenConfig(getState))
         .then(res => dispatch({
             type: STUDENT_UPDATE_SUCCESS,
             payload: res.data

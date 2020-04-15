@@ -22,7 +22,7 @@ export const getJobs = () => (dispatch, getState) => {
     //Jobs updating
     dispatch({ type: JOB_UPDATING });
 
-    axios.get('http://localhost:5000/api/jobs', tokenConfig(getState))
+    axios.get('https://tnpportal-backend-igdtuw.herokuapp.com/api/jobs', tokenConfig(getState))
         .then(res => dispatch({
             type: JOB_UPDATE_SUCCESS,
             payload: res.data
@@ -73,7 +73,7 @@ export const addNewJob = ({
         selectionProcedure,
         description,
         otherInfoForStudents});
-    axios.post('http://localhost:5000/api/jobs', body, tokenConfig(getState))
+    axios.post('https://tnpportal-backend-igdtuw.herokuapp.com/api/jobs', body, tokenConfig(getState))
         .then(res => dispatch({
             type: JOB_ADD_SUCCESS,
             payload: res.data
@@ -124,7 +124,7 @@ export const modifyJob = (jobId, {
         selectionProcedure,
         description,
         otherInfoForStudents});
-    axios.put(`http://localhost:5000/api/jobs/${jobId}` , body, tokenConfig(getState))
+    axios.put(`https://tnpportal-backend-igdtuw.herokuapp.com/api/jobs/${jobId}` , body, tokenConfig(getState))
         .then(res => dispatch({
             type: JOB_EDIT_SUCCESS,
             payload: res.data
@@ -144,7 +144,7 @@ export const deleteJob = (jobId) => (dispatch, getState) => {
     dispatch({ type: JOB_DELETE_CLEAR });
 
     //Request body
-    axios.delete(`http://localhost:5000/api/jobs/${jobId}` , tokenConfig(getState))
+    axios.delete(`https://tnpportal-backend-igdtuw.herokuapp.com/api/jobs/${jobId}` , tokenConfig(getState))
         .then(res => dispatch({
             type: JOB_DELETE_SUCCESS,
             payload: res.data

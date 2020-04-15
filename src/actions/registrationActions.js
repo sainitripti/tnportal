@@ -24,7 +24,7 @@ export const getRegistrations = () => (dispatch, getState) => {
     //Jobs updating
     dispatch({ type: REGISTRATION_UPDATING });
 
-    axios.get('http://localhost:5000/api/drive-wise-registrations', tokenConfig(getState))
+    axios.get('https://tnpportal-backend-igdtuw.herokuapp.com/api/drive-wise-registrations', tokenConfig(getState))
         .then(res => dispatch({
             type: REGISTRATION_UPDATE_SUCCESS,
             payload: res.data
@@ -44,7 +44,7 @@ export const registerForDrive = ({drive, arEnrollmentNum}) => (dispatch, getStat
 
     //Request body
     const body = JSON.stringify({drive, arEnrollmentNum});
-    axios.post('http://localhost:5000/api/drive-wise-registrations', body, tokenConfig(getState))
+    axios.post('https://tnpportal-backend-igdtuw.herokuapp.com/api/drive-wise-registrations', body, tokenConfig(getState))
         .then(res => dispatch({
             type: REGISTRATION_ADD_SUCCESS,
             payload: res.data
@@ -65,7 +65,7 @@ export const unregisterForDrive = ({drive, enrollmentNum}) => (dispatch, getStat
 
     //Request body
     const body = JSON.stringify({drive, enrollmentNum});
-    axios.put('http://localhost:5000/api/drive-wise-registrations', body, tokenConfig(getState))
+    axios.put('https://tnpportal-backend-igdtuw.herokuapp.com/api/drive-wise-registrations', body, tokenConfig(getState))
         .then(res => dispatch({
             type: REGISTRATION_DELETE_SUCCESS,
             payload: res.data

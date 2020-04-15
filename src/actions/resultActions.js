@@ -19,10 +19,9 @@ import {
 //Get all results
 export const getResults = () => (dispatch, getState) => {
     
-    //Jobs updating
     dispatch({ type: RESULT_UPDATING });
 
-    axios.get('http://localhost:5000/api/results', tokenConfig(getState))
+    axios.get('https://tnpportal-backend-igdtuw.herokuapp.com/api/results', tokenConfig(getState))
         .then(res => dispatch({
             type: RESULT_UPDATE_SUCCESS,
             payload: res.data
@@ -42,7 +41,7 @@ export const addNewResult = ({companyName, dateOfAnnouncement, numTotalSelects, 
 
     //Request body
     const body = JSON.stringify({companyName, dateOfAnnouncement, numTotalSelects, numIntern, numFTE, ctcIntern, ctcFTE, isMassRecruitment, arIntern, arFTE, profile});
-    axios.post('http://localhost:5000/api/results', body, tokenConfig(getState))
+    axios.post('https://tnpportal-backend-igdtuw.herokuapp.com/api/results', body, tokenConfig(getState))
         .then(res => dispatch({
             type: RESULT_ADD_SUCCESS,
             payload: res.data
@@ -63,7 +62,7 @@ export const modifyResult = (resultId, {companyName, dateOfAnnouncement, numTota
 
     //Request body
     const body = JSON.stringify({companyName, dateOfAnnouncement, numTotalSelects, numIntern, numFTE, ctcIntern, ctcFTE, isMassRecruitment, arIntern, arFTE, profile});
-    axios.put(`http://localhost:5000/api/results/${resultId}` , body, tokenConfig(getState))
+    axios.put(`https://tnpportal-backend-igdtuw.herokuapp.com/api/results/${resultId}` , body, tokenConfig(getState))
         .then(res => dispatch({
             type: RESULT_EDIT_SUCCESS,
             payload: res.data
@@ -83,7 +82,7 @@ export const deleteResult = (resultId) => (dispatch, getState) => {
     dispatch({ type: RESULT_DELETE_CLEAR });
 
     //Request body
-    axios.delete(`http://localhost:5000/api/results/${resultId}` , tokenConfig(getState))
+    axios.delete(`https://tnpportal-backend-igdtuw.herokuapp.com/api/results/${resultId}` , tokenConfig(getState))
         .then(res => dispatch({
             type: RESULT_DELETE_SUCCESS,
             payload: res.data
